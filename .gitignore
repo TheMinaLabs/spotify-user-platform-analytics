@@ -1,0 +1,6 @@
+spotify_iam.duckdb
+.venv/
+dbt_project/target/
+dbt_project/logs/
+__pycache__/
+*.pyc

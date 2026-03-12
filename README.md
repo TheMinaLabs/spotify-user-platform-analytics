@@ -99,7 +99,7 @@ pip install -r requirements.txt
 ### 2. Generate synthetic data
 ```bash
 python data_ingestion/generate_data.py
-# Loads 5,000 users and ~1.3M auth events into spotify_iam.duckdb
+# Loads 500 users and ~30,000 auth events into spotify_iam.duckdb
 ```
 
 ### 3. Run dbt models
