@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="metric_date", model=get_where_subquery(ref('fct_daily_auth_metrics'))) }}

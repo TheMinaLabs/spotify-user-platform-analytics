@@ -1,0 +1,1 @@
+{{ test_accepted_values(column_name="friction_segment", model=get_where_subquery(ref('user_friction_scores')), values=["high_friction","medium_friction","low_friction"]) }}

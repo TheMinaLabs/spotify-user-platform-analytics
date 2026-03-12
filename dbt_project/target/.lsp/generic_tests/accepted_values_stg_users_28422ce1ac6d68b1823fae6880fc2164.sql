@@ -1,0 +1,1 @@
+{{ test_accepted_values(column_name="subscription_tier", model=get_where_subquery(ref('stg_users')), values=["free","premium","unknown"]) }}

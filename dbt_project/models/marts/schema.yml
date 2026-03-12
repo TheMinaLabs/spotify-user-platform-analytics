@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: fct_daily_auth_metrics
+    description: >
+      Daily aggregated IAM authentication metrics sliced by country, device,
+      and subscription type. Powers the User Platform health dashboard.
+      Includes conversion rates, MFA pass rates, and session failure breakdowns.
+    columns:
+      - name: metric_date
+        tests: [not_null]
+
+  - name: user_friction_scores
+    description: >
+      User-level friction scoring model. Each user receives a 0-100 friction
+      score based on their auth history (failure rate, MFA blocks, password resets).
+      Used to segment users into high/medium/low friction cohorts for UX research.
+    columns:
+      - name: user_id
+        tests: [not_null, unique]
+      - name: friction_score
+        tests:
+          - not_null
+      - name: friction_segment
+        tests:
+          - accepted_values:
+              name: accepted_values_friction_segment
+              arguments:
+                values: [high_friction, medium_friction, low_friction]

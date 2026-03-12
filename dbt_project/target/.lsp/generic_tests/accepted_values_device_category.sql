@@ -1,0 +1,1 @@
+{{ test_accepted_values(column_name="device_category", model=get_where_subquery(ref('stg_auth_events')), values=["mobile","desktop","web","smart_tv","unknown"]) }}

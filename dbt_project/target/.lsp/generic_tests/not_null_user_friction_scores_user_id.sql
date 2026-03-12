@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="user_id", model=get_where_subquery(ref('user_friction_scores'))) }}

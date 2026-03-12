@@ -1,0 +1,1153 @@
+==================== 2026-03-12T17:50:54.108207Z | 976aaa8f-777d-4d0b-80fb-94901540cfba ====================
+17:50:54.108428 [info ]: Starting dbt LSP server
+17:50:54.108497 [info ]: Connecting to LSP client on port 8000
+17:50:54.109117 [info ]: Successfully connected to LSP client
+17:50:54.109132 [info ]: Creating LSP service...
+17:50:54.156433 [info ]: Creating LSP server...
+17:50:54.156453 [info ]: Starting LSP server...
+17:50:54.169128 [info ]: Loading ~/.dbt/profiles.yml
+17:50:54.175622 [info ]: Started loading project
+17:50:54.175900 [info ]: Loading ~/.dbt/profiles.yml
+17:50:54.176347 [info ]: Finished loading project [  0.00s]
+17:50:54.570274 [info ]: Loading ~/.dbt/profiles.yml
+17:50:55.076142 [info ]: Loading ~/.dbt/profiles.yml
+17:51:21.713487 [info ]: Loading profiles.yml
+17:51:21.720271 [info ]: Started loading project
+17:51:21.720496 [info ]: Loading profiles.yml
+17:51:21.874518 [debug]:    Started loading packages
+17:51:21.876257 [debug]:     Loaded [  0.00s] packages
+17:51:21.877573 [info ]: Started parsing
+17:51:21.893208 [info ]: Finished loading project [  0.17s]
+17:51:21.899631 [debug]: Finished parsing models/intermediate/int_user_sessions.sql [  0.00s]
+17:51:21.900333 [debug]: Finished parsing models/marts/fct_daily_auth_metrics.sql [  0.00s]
+17:51:21.900779 [debug]: Finished parsing models/marts/user_friction_scores.sql [  0.00s]
+17:51:21.903026 [debug]: Finished parsing models/staging/stg_auth_events.sql [  0.00s]
+17:51:21.903412 [error]: dbt1005: Ref 'int_auth_funnel' not found in project. Searched for 'spotify_user_platform.int_auth_funnel, int_auth_funnel'
+  --> models/marts/fct_daily_auth_metrics.sql:10:19
+17:51:21.903447 [error]: dbt1005: Source 'raw.raw_auth_events' not found in project. Searched for 'raw_auth_events'
+  --> models/staging/stg_auth_events.sql:6:19
+17:51:21.903466 [error]: dbt1005: Ref 'stg_users' not found in project. Searched for 'spotify_user_platform.stg_users, stg_users'
+  --> models/marts/user_friction_scores.sql:11:19
+17:51:21.903895 [info ]: Cached model count updated: 4 models (estimate)
+17:51:21.903902 [info ]: Cached model count updated: 4 models (accurate)
+17:51:21.904034 [info ]: Started scheduling
+17:51:21.904320 [info ]: Finished scheduling [  0.00s]
+17:51:21.904355 [info ]: Started scheduling
+17:51:21.904375 [info ]: Finished scheduling [  0.00s]
+17:51:21.905235 [info ]: Started deferring state
+17:51:21.905243 [info ]: Finished deferring state [  0.00s]
+17:51:22.003587 [info ]: Started building task graph
+17:51:22.003959 [info ]: Finished building task graph [  0.00s]
+17:51:22.004639 [info ]: Started rendering (4 nodes)
+17:51:22.004740 [info ]: Started model main_staging.stg_auth_events
+17:51:22.004830 [debug]: Started rendering model main_staging.stg_auth_events
+17:51:22.004892 [info ]: Finished parsing [  0.13s]
+17:51:22.006750 [error]: dbt1501: Failed to render SQL not a key type: Source not found for source name: raw, table name: raw_auth_events
+(in models/staging/stg_auth_events.sql:6:19)
+  --> models/staging/stg_auth_events.sql:6:19
+17:51:22.006869 [info ]: Started analyzing (4 nodes)
+17:51:22.006878 [debug]: Started analyzing model main_staging.stg_auth_events
+17:51:22.006893 [debug]: Finished rendering [  0.00s] model main_staging.stg_auth_events [error]
+17:51:22.006892 [info ]:     Failed [  0.00s] model main_staging.stg_auth_events (view)
+17:51:22.006935 [debug]: Finished analyzing [  0.00s] model main_staging.stg_auth_events [skipped]
+17:51:22.006946 [info ]: Started model main.int_user_sessions
+17:51:22.006952 [debug]: Started rendering model main.int_user_sessions
+17:51:22.006959 [debug]: Finished rendering [  0.00s] model main.int_user_sessions [skipped]
+17:51:22.006966 [debug]: Started analyzing model main.int_user_sessions
+17:51:22.006975 [info ]:    Skipped [-------] model main.int_user_sessions (ephemeral)
+17:51:22.006983 [debug]: Finished analyzing [  0.00s] model main.int_user_sessions [skipped]
+17:51:22.006988 [info ]: Started model main_marts.fct_daily_auth_metrics
+17:51:22.006993 [debug]: Started rendering model main_marts.fct_daily_auth_metrics
+17:51:22.006997 [debug]: Finished rendering [  0.00s] model main_marts.fct_daily_auth_metrics [skipped]
+17:51:22.007001 [debug]: Started analyzing model main_marts.fct_daily_auth_metrics
+17:51:22.007007 [info ]:    Skipped [-------] model main_marts.fct_daily_auth_metrics (table)
+17:51:22.007012 [debug]: Finished analyzing [  0.00s] model main_marts.fct_daily_auth_metrics [skipped]
+17:51:22.007016 [info ]: Started model main_marts.user_friction_scores
+17:51:22.007020 [debug]: Started rendering model main_marts.user_friction_scores
+17:51:22.007024 [debug]: Finished rendering [  0.00s] model main_marts.user_friction_scores [skipped]
+17:51:22.007028 [info ]: Finished rendering [  0.00s] (4 nodes, 3 skipped, 1 errors)
+17:51:22.007032 [debug]: Started analyzing model main_marts.user_friction_scores
+17:51:22.007037 [info ]:    Skipped [-------] model main_marts.user_friction_scores (table)
+17:51:22.007042 [debug]: Finished analyzing [  0.00s] model main_marts.user_friction_scores [skipped]
+17:51:22.007044 [info ]: Finished analyzing [  0.00s] (4 nodes, 4 skipped, 0 errors)
+17:51:22.009007 [info ]: Cached model count updated: 4 models (accurate)
+17:51:44.211657 [info ]: Started loading project
+17:51:44.212384 [info ]: Loading profiles.yml
+17:51:44.215383 [info ]: Started loading project
+17:51:44.215531 [info ]: Loading profiles.yml
+17:51:44.215564 [info ]: Finished loading project [  0.00s]
+17:51:44.359889 [debug]:    Started loading packages
+17:51:44.360696 [debug]:     Loaded [  0.00s] packages
+17:51:44.361176 [info ]: Started parsing
+17:51:44.375408 [info ]: Finished loading project [  0.16s]
+17:51:44.376524 [debug]: Finished parsing models/intermediate/int_auth_funnel.sql [  0.00s]
+17:51:44.377068 [debug]: Finished parsing models/intermediate/int_user_sessions.sql [  0.00s]
+17:51:44.377395 [debug]: Finished parsing models/marts/fct_daily_auth_metrics.sql [  0.00s]
+17:51:44.377706 [debug]: Finished parsing models/marts/user_friction_scores.sql [  0.00s]
+17:51:44.379635 [debug]: Finished parsing models/staging/stg_auth_events.sql [  0.00s]
+17:51:44.379793 [error]: dbt1005: Source 'raw.raw_auth_events' not found in project. Searched for 'raw_auth_events'
+  --> models/staging/stg_auth_events.sql:6:19
+17:51:44.379824 [error]: dbt1005: Ref 'stg_users' not found in project. Searched for 'spotify_user_platform.stg_users, stg_users'
+  --> models/marts/user_friction_scores.sql:11:19
+17:51:44.380046 [info ]: Cached model count updated: 5 models (estimate)
+17:51:44.380054 [info ]: Cached model count updated: 5 models (accurate)
+17:51:44.380077 [info ]: Started scheduling
+17:51:44.380119 [info ]: Finished scheduling [  0.00s]
+17:51:44.380130 [info ]: Started scheduling
+17:51:44.380150 [info ]: Finished scheduling [  0.00s]
+17:51:44.380406 [info ]: Started deferring state
+17:51:44.380413 [info ]: Finished deferring state [  0.00s]
+17:51:44.475976 [info ]: Started building task graph
+17:51:44.476043 [info ]: Finished building task graph [  0.00s]
+17:51:44.476131 [info ]: Started rendering (5 nodes)
+17:51:44.476143 [info ]: Started model main_staging.stg_auth_events
+17:51:44.476151 [debug]: Started rendering model main_staging.stg_auth_events
+17:51:44.476208 [info ]: Finished parsing [  0.12s]
+17:51:44.476613 [error]: dbt1501: Failed to render SQL not a key type: Source not found for source name: raw, table name: raw_auth_events
+(in models/staging/stg_auth_events.sql:6:19)
+  --> models/staging/stg_auth_events.sql:6:19
+17:51:44.476649 [info ]: Started analyzing (5 nodes)
+17:51:44.476654 [debug]: Started analyzing model main_staging.stg_auth_events
+17:51:44.476666 [info ]:     Failed [-------] model main_staging.stg_auth_events (view)
+17:51:44.476675 [debug]: Finished analyzing [  0.00s] model main_staging.stg_auth_events [skipped]
+17:51:44.476674 [debug]: Finished rendering [  0.00s] model main_staging.stg_auth_events [error]
+17:51:44.476687 [info ]: Started model main.int_auth_funnel
+17:51:44.476691 [debug]: Started rendering model main.int_auth_funnel
+17:51:44.476696 [debug]: Finished rendering [  0.00s] model main.int_auth_funnel [skipped]
+17:51:44.476701 [debug]: Started analyzing model main.int_auth_funnel
+17:51:44.476707 [info ]:    Skipped [-------] model main.int_auth_funnel (ephemeral)
+17:51:44.476712 [debug]: Finished analyzing [  0.00s] model main.int_auth_funnel [skipped]
+17:51:44.476716 [info ]: Started model main.int_user_sessions
+17:51:44.476722 [debug]: Started rendering model main.int_user_sessions
+17:51:44.476726 [debug]: Finished rendering [  0.00s] model main.int_user_sessions [skipped]
+17:51:44.476729 [debug]: Started analyzing model main.int_user_sessions
+17:51:44.476735 [info ]:    Skipped [-------] model main.int_user_sessions (ephemeral)
+17:51:44.476740 [debug]: Finished analyzing [  0.00s] model main.int_user_sessions [skipped]
+17:51:44.476744 [info ]: Started model main_marts.fct_daily_auth_metrics
+17:51:44.476749 [debug]: Started rendering model main_marts.fct_daily_auth_metrics
+17:51:44.476753 [debug]: Finished rendering [  0.00s] model main_marts.fct_daily_auth_metrics [skipped]
+17:51:44.476758 [debug]: Started analyzing model main_marts.fct_daily_auth_metrics
+17:51:44.476763 [info ]:    Skipped [-------] model main_marts.fct_daily_auth_metrics (table)
+17:51:44.476767 [debug]: Finished analyzing [  0.00s] model main_marts.fct_daily_auth_metrics [skipped]
+17:51:44.476771 [info ]: Started model main_marts.user_friction_scores
+17:51:44.476776 [debug]: Started rendering model main_marts.user_friction_scores
+17:51:44.476780 [debug]: Finished rendering [  0.00s] model main_marts.user_friction_scores [skipped]
+17:51:44.476783 [info ]: Finished rendering [  0.00s] (5 nodes, 4 skipped, 1 errors)
+17:51:44.476786 [debug]: Started analyzing model main_marts.user_friction_scores
+17:51:44.476791 [info ]:    Skipped [-------] model main_marts.user_friction_scores (table)
+17:51:44.476799 [debug]: Finished analyzing [  0.00s] model main_marts.user_friction_scores [skipped]
+17:51:44.476801 [info ]: Finished analyzing [  0.00s] (5 nodes, 5 skipped, 0 errors)
+17:51:44.479086 [info ]: Cached model count updated: 5 models (accurate)
+17:53:07.417701 [info ]: Started loading project
+17:53:07.418290 [info ]: Loading profiles.yml
+17:53:07.420324 [info ]: Started loading project
+17:53:07.420477 [info ]: Loading profiles.yml
+17:53:07.420492 [info ]: Finished loading project [  0.00s]
+17:53:07.563968 [debug]:    Started loading packages
+17:53:07.564870 [debug]:     Loaded [  0.00s] packages
+17:53:07.565360 [info ]: Started parsing
+17:53:07.579450 [info ]: Finished loading project [  0.16s]
+17:53:07.580990 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+17:53:07.584152 [debug]: Finished parsing models/intermediate/int_auth_funnel.sql [  0.00s]
+17:53:07.584721 [debug]: Finished parsing models/intermediate/int_user_sessions.sql [  0.00s]
+17:53:07.585272 [debug]: Finished parsing models/marts/fct_daily_auth_metrics.sql [  0.00s]
+17:53:07.586057 [debug]: Finished parsing models/marts/user_friction_scores.sql [  0.00s]
+17:53:07.587589 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:62:23
+17:53:07.587655 [debug]: Finished parsing models/staging/stg_auth_events.sql [  0.00s]
+17:53:07.588390 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:41:17
+17:53:07.589019 [warn ]: dbt1005: Unused schema.yml entry for model 'stg_users'
+  --> models/staging/schema.yml
+17:53:07.589821 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_id.sql [  0.00s]
+17:53:07.590135 [debug]: Finished parsing target/generic_tests/source_unique_raw_raw_auth_events_event_id.sql [  0.00s]
+17:53:07.590631 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_ts.sql [  0.00s]
+17:53:07.590971 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_type.sql [  0.00s]
+17:53:07.591224 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_user_id.sql [  0.00s]
+17:53:07.591481 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_users_user_id.sql [  0.00s]
+17:53:07.591733 [debug]: Finished parsing target/generic_tests/source_unique_raw_raw_users_user_id.sql [  0.00s]
+17:53:07.591998 [debug]: Finished parsing target/generic_tests/accepted_values_stg_auth_event_a54bc1b7532cccac4504d39a4f00b8bc.sql [  0.00s]
+17:53:07.592243 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_id.sql [  0.00s]
+17:53:07.592554 [debug]: Finished parsing target/generic_tests/unique_stg_auth_events_event_id.sql [  0.00s]
+17:53:07.592865 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_ts.sql [  0.00s]
+17:53:07.593140 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_type.sql [  0.00s]
+17:53:07.593436 [debug]: Finished parsing target/generic_tests/accepted_values_stg_auth_event_115c2a2d0872c7144fbe5da9c827f075.sql [  0.00s]
+17:53:07.596246 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_user_id.sql [  0.00s]
+17:53:07.596494 [error]: dbt1005: Ref 'stg_users' not found in project. Searched for 'spotify_user_platform.stg_users, stg_users'
+  --> models/marts/user_friction_scores.sql:11:19
+17:53:07.596689 [info ]: Cached model count updated: 5 models (estimate)
+17:53:07.596695 [info ]: Cached model count updated: 5 models (accurate)
+17:53:07.596726 [info ]: Started scheduling
+17:53:07.597160 [info ]: Finished scheduling [  0.00s]
+17:53:07.597170 [info ]: Started scheduling
+17:53:07.597206 [info ]: Finished scheduling [  0.00s]
+17:53:07.597333 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "spotify_iam", schema: "main", table: "raw_auth_events" }) and interval: None
+17:53:07.597683 [info ]: Started deferring state
+17:53:07.597691 [info ]: Finished deferring state [  0.00s]
+17:53:07.598009 [info ]: Started downloading schemas
+17:53:07.598274 [info ]: Finished parsing [  0.03s]
+17:53:09.550435 [debug]: Query executed on node unknown:
+DESCRIBE "spotify_iam"."main"."raw_auth_events";
+17:53:10.556541 [warn ]: dbt1014: Failed to download source schema for 'source.spotify_user_platform.raw.raw_auth_events'. Setting 'static_analysis' to off. Skipping analysis for 'model.spotify_user_platform.stg_auth_events', 'test.spotify_user_platform.source_not_null_raw_raw_auth_events_event_id.588af888ea' and 4 others: Catalog Error: Table with name raw_auth_events does not exist!
+Did you mean "information_schema.character_sets"?
+
+LINE 1: DESCRIBE "spotify_iam"."main"."raw_auth_events";
+                 ^
+17:53:10.658482 [info ]: Started building task graph
+17:53:10.658610 [info ]: Finished building task graph [  0.00s]
+17:53:10.658690 [info ]: Started rendering (5 nodes)
+17:53:10.658701 [info ]: Started model main.int_user_sessions
+17:53:10.658709 [debug]: Started rendering model main.int_user_sessions
+17:53:10.658725 [info ]: Started model main.int_auth_funnel
+17:53:10.658731 [debug]: Started rendering model main.int_auth_funnel
+17:53:10.658738 [info ]: Started model main_staging.stg_auth_events
+17:53:10.658745 [debug]: Started rendering model main_staging.stg_auth_events
+17:53:10.658754 [info ]: Finished downloading schemas [  3.06s]
+17:53:10.660553 [debug]: Compiled SQL for node model.spotify_user_platform.stg_auth_events at target/.lsp/compiled/models/staging/stg_auth_events.sql
+17:53:10.660653 [info ]:  Succeeded [  0.00s] model main_staging.stg_auth_events (view)
+17:53:10.660668 [debug]: Finished rendering [  0.00s] model main_staging.stg_auth_events [success]
+17:53:10.660787 [debug]: Compiled SQL for node model.spotify_user_platform.int_auth_funnel at target/.lsp/compiled/models/intermediate/int_auth_funnel.sql
+17:53:10.660830 [info ]:  Succeeded [  0.00s] model main.int_auth_funnel (ephemeral)
+17:53:10.660841 [debug]: Finished rendering [  0.00s] model main.int_auth_funnel [success]
+17:53:10.660888 [debug]: Compiled SQL for node model.spotify_user_platform.int_user_sessions at target/.lsp/compiled/models/intermediate/int_user_sessions.sql
+17:53:10.660933 [info ]:  Succeeded [  0.00s] model main.int_user_sessions (ephemeral)
+17:53:10.660949 [debug]: Finished rendering [  0.00s] model main.int_user_sessions [success]
+17:53:10.660963 [info ]: Started model main_marts.fct_daily_auth_metrics
+17:53:10.660972 [debug]: Started rendering model main_marts.fct_daily_auth_metrics
+17:53:10.660984 [info ]: Started model main_marts.user_friction_scores
+17:53:10.660989 [debug]: Started rendering model main_marts.user_friction_scores
+17:53:10.661485 [error]: dbt1501: Failed to render SQL not a key type: ref not found for package: spotify_user_platform, model: stg_users, version: None
+(in models/marts/user_friction_scores.sql:11:19)
+  --> models/marts/user_friction_scores.sql:11:19
+17:53:10.661503 [info ]:     Failed [-------] model main_marts.user_friction_scores (table)
+17:53:10.661525 [debug]: Finished rendering [  0.00s] model main_marts.user_friction_scores [error]
+17:53:10.662355 [debug]: Compiled SQL for node model.spotify_user_platform.fct_daily_auth_metrics at target/.lsp/compiled/models/marts/fct_daily_auth_metrics.sql
+17:53:10.662391 [info ]:  Succeeded [  0.00s] model main_marts.fct_daily_auth_metrics (table)
+17:53:10.662407 [debug]: Finished rendering [  0.00s] model main_marts.fct_daily_auth_metrics [success]
+17:53:10.662412 [info ]: Finished rendering [  0.00s] (5 nodes, 0 skipped, 1 errors)
+17:53:10.665483 [info ]: Cached model count updated: 5 models (accurate)
+17:53:29.364600 [info ]: Started loading project
+17:53:29.365227 [info ]: Loading profiles.yml
+17:53:29.367293 [info ]: Started loading project
+17:53:29.367442 [info ]: Loading profiles.yml
+17:53:29.367467 [info ]: Finished loading project [  0.00s]
+17:53:29.509620 [debug]:    Started loading packages
+17:53:29.510612 [debug]:     Loaded [  0.00s] packages
+17:53:29.511073 [info ]: Started parsing
+17:53:29.524766 [info ]: Finished loading project [  0.16s]
+17:53:29.525540 [debug]: Finished parsing models/marts/schema (1).yml [  0.00s]
+17:53:29.525967 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+17:53:29.527547 [info ]: Finished parsing [  0.02s]
+17:53:40.805783 [info ]: Started loading project
+17:53:40.806291 [info ]: Loading profiles.yml
+17:53:40.949500 [debug]:    Started loading packages
+17:53:40.950830 [debug]:     Loaded [  0.00s] packages
+17:53:40.951324 [info ]: Started parsing
+17:53:40.965035 [info ]: Finished loading project [  0.16s]
+17:53:40.965814 [debug]: Finished parsing models/marts/schema.yml [  0.00s]
+17:53:40.966401 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+17:53:40.967896 [info ]: Finished parsing [  0.02s]
+17:54:37.324567 [info ]: Started loading project
+17:54:37.325155 [info ]: Loading profiles.yml
+17:54:37.469567 [debug]:    Started loading packages
+17:54:37.470988 [debug]:     Loaded [  0.00s] packages
+17:54:37.471455 [info ]: Started parsing
+17:54:37.485299 [info ]: Finished loading project [  0.16s]
+17:54:37.486112 [debug]: Finished parsing models/marts/schema.yml [  0.00s]
+17:54:37.486574 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+17:54:37.488130 [info ]: Finished parsing [  0.02s]
+17:54:45.059626 [info ]: Started loading project
+17:54:45.060320 [info ]: Loading profiles.yml
+17:54:45.205871 [debug]:    Started loading packages
+17:54:45.207131 [debug]:     Loaded [  0.00s] packages
+17:54:45.207600 [info ]: Started parsing
+17:54:45.220764 [info ]: Finished loading project [  0.16s]
+17:54:45.221425 [debug]: Finished parsing models/marts/schema.yml [  0.00s]
+17:54:45.221884 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+17:54:45.223037 [info ]: Finished parsing [  0.02s]
+17:56:17.702235 [info ]: Started loading project
+17:56:17.702778 [info ]: Loading profiles.yml
+17:56:17.844384 [debug]:    Started loading packages
+17:56:17.846086 [debug]:     Loaded [  0.00s] packages
+17:56:17.846580 [info ]: Started parsing
+17:56:17.860118 [info ]: Finished loading project [  0.16s]
+17:56:17.861213 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+17:56:17.864545 [debug]: Finished parsing models/intermediate/int_auth_funnel.sql [  0.00s]
+17:56:17.864912 [debug]: Finished parsing models/intermediate/int_user_sessions.sql [  0.00s]
+17:56:17.865226 [debug]: Finished parsing models/marts/fct_daily_auth_metrics.sql [  0.00s]
+17:56:17.865620 [debug]: Finished parsing models/marts/user_friction_scores.sql [  0.00s]
+17:56:17.867246 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:62:23
+17:56:17.867365 [debug]: Finished parsing models/staging/stg_auth_events.sql [  0.00s]
+17:56:17.872415 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:41:17
+17:56:17.873503 [warn ]: dbt1005: Unused schema.yml entry for model 'stg_users'
+  --> models/staging/schema.yml
+17:56:17.874439 [debug]: Finished parsing tests/assert_conversion_rate_not_zero.sql [  0.00s]
+17:56:17.874705 [debug]: Finished parsing tests/assert_no_future_events.sql [  0.00s]
+17:56:17.875217 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_id.sql [  0.00s]
+17:56:17.875878 [debug]: Finished parsing target/generic_tests/source_unique_raw_raw_auth_events_event_id.sql [  0.00s]
+17:56:17.876369 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_ts.sql [  0.00s]
+17:56:17.876721 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_type.sql [  0.00s]
+17:56:17.877002 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_user_id.sql [  0.00s]
+17:56:17.877271 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_users_user_id.sql [  0.00s]
+17:56:17.877618 [debug]: Finished parsing target/generic_tests/source_unique_raw_raw_users_user_id.sql [  0.00s]
+17:56:17.878014 [debug]: Finished parsing target/generic_tests/accepted_values_stg_auth_event_a54bc1b7532cccac4504d39a4f00b8bc.sql [  0.00s]
+17:56:17.878476 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_id.sql [  0.00s]
+17:56:17.878925 [debug]: Finished parsing target/generic_tests/unique_stg_auth_events_event_id.sql [  0.00s]
+17:56:17.879256 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_ts.sql [  0.00s]
+17:56:17.879611 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_type.sql [  0.00s]
+17:56:17.880070 [debug]: Finished parsing target/generic_tests/accepted_values_stg_auth_event_115c2a2d0872c7144fbe5da9c827f075.sql [  0.00s]
+17:56:17.883275 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_user_id.sql [  0.00s]
+17:56:17.883502 [error]: dbt1005: Ref 'stg_users' not found in project. Searched for 'spotify_user_platform.stg_users, stg_users'
+  --> models/marts/user_friction_scores.sql:11:19
+17:56:17.883701 [info ]: Cached model count updated: 5 models (estimate)
+17:56:17.883709 [info ]: Cached model count updated: 5 models (accurate)
+17:56:17.883740 [info ]: Started scheduling
+17:56:17.883803 [info ]: Finished scheduling [  0.00s]
+17:56:17.883813 [info ]: Started scheduling
+17:56:17.883850 [info ]: Finished scheduling [  0.00s]
+17:56:17.883872 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "spotify_iam", schema: "main", table: "raw_auth_events" }) and interval: None
+17:56:17.884114 [info ]: Started deferring state
+17:56:17.884121 [info ]: Finished deferring state [  0.00s]
+17:56:17.884314 [info ]: Started downloading schemas
+17:56:17.884367 [info ]: Finished parsing [  0.04s]
+17:56:17.894349 [debug]: Query executed on node unknown:
+DESCRIBE "spotify_iam"."main"."raw_auth_events";
+17:56:18.896681 [warn ]: dbt1014: Failed to download source schema for 'source.spotify_user_platform.raw.raw_auth_events'. Setting 'static_analysis' to off. Skipping analysis for 'model.spotify_user_platform.stg_auth_events', 'test.spotify_user_platform.source_not_null_raw_raw_auth_events_event_id.588af888ea' and 4 others: Catalog Error: Table with name raw_auth_events does not exist!
+Did you mean "information_schema.character_sets"?
+
+LINE 1: DESCRIBE "spotify_iam"."main"."raw_auth_events";
+                 ^
+17:56:18.998573 [info ]: Started building task graph
+17:56:18.998637 [info ]: Finished building task graph [  0.00s]
+17:56:18.998715 [info ]: Started rendering (5 nodes)
+17:56:18.998726 [info ]: Started model main.int_user_sessions
+17:56:18.998734 [debug]: Started rendering model main.int_user_sessions
+17:56:18.998751 [info ]: Started model main.int_auth_funnel
+17:56:18.998756 [debug]: Started rendering model main.int_auth_funnel
+17:56:18.998764 [info ]: Started model main_staging.stg_auth_events
+17:56:18.998770 [debug]: Started rendering model main_staging.stg_auth_events
+17:56:18.998779 [info ]: Finished downloading schemas [  1.11s]
+17:56:18.999966 [debug]: Compiled SQL for node model.spotify_user_platform.stg_auth_events at target/.lsp/compiled/models/staging/stg_auth_events.sql
+17:56:19.000006 [info ]:  Succeeded [  0.00s] model main_staging.stg_auth_events (view)
+17:56:19.000041 [debug]: Finished rendering [  0.00s] model main_staging.stg_auth_events [success]
+17:56:19.000211 [debug]: Compiled SQL for node model.spotify_user_platform.int_auth_funnel at target/.lsp/compiled/models/intermediate/int_auth_funnel.sql
+17:56:19.000225 [debug]: Compiled SQL for node model.spotify_user_platform.int_user_sessions at target/.lsp/compiled/models/intermediate/int_user_sessions.sql
+17:56:19.000245 [info ]:  Succeeded [  0.00s] model main.int_auth_funnel (ephemeral)
+17:56:19.000253 [debug]: Finished rendering [  0.00s] model main.int_auth_funnel [success]
+17:56:19.000259 [info ]:  Succeeded [  0.00s] model main.int_user_sessions (ephemeral)
+17:56:19.000264 [debug]: Finished rendering [  0.00s] model main.int_user_sessions [success]
+17:56:19.000271 [info ]: Started model main_marts.fct_daily_auth_metrics
+17:56:19.000277 [debug]: Started rendering model main_marts.fct_daily_auth_metrics
+17:56:19.000289 [info ]: Started model main_marts.user_friction_scores
+17:56:19.000294 [debug]: Started rendering model main_marts.user_friction_scores
+17:56:19.000592 [error]: dbt1501: Failed to render SQL not a key type: ref not found for package: spotify_user_platform, model: stg_users, version: None
+(in models/marts/user_friction_scores.sql:11:19)
+  --> models/marts/user_friction_scores.sql:11:19
+17:56:19.000604 [info ]:     Failed [-------] model main_marts.user_friction_scores (table)
+17:56:19.000620 [debug]: Finished rendering [  0.00s] model main_marts.user_friction_scores [error]
+17:56:19.001285 [debug]: Compiled SQL for node model.spotify_user_platform.fct_daily_auth_metrics at target/.lsp/compiled/models/marts/fct_daily_auth_metrics.sql
+17:56:19.001311 [info ]:  Succeeded [  0.00s] model main_marts.fct_daily_auth_metrics (table)
+17:56:19.001371 [debug]: Finished rendering [  0.00s] model main_marts.fct_daily_auth_metrics [success]
+17:56:19.001387 [info ]: Finished rendering [  0.00s] (5 nodes, 0 skipped, 1 errors)
+17:56:19.003696 [info ]: Cached model count updated: 5 models (accurate)
+17:56:36.599275 [info ]: Started loading project
+17:56:36.599911 [info ]: Loading profiles.yml
+17:56:36.602331 [info ]: Started loading project
+17:56:36.602514 [info ]: Loading profiles.yml
+17:56:36.602537 [info ]: Finished loading project [  0.00s]
+17:56:36.744217 [debug]:    Started loading packages
+17:56:36.745373 [debug]:     Loaded [  0.00s] packages
+17:56:36.745868 [info ]: Started parsing
+17:56:36.759571 [info ]: Finished loading project [  0.16s]
+17:56:36.760226 [debug]: Finished parsing models/marts/schema (2).yml [  0.00s]
+17:56:36.760705 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+17:56:36.763740 [debug]: Finished parsing models/intermediate/int_auth_funnel.sql [  0.00s]
+17:56:36.764162 [debug]: Finished parsing models/intermediate/int_user_sessions.sql [  0.00s]
+17:56:36.764573 [debug]: Finished parsing models/marts/fct_daily_auth_metrics.sql [  0.00s]
+17:56:36.764961 [debug]: Finished parsing models/marts/user_friction_scores.sql [  0.00s]
+17:56:36.766931 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:62:23
+17:56:36.766997 [debug]: Finished parsing models/staging/stg_auth_events.sql [  0.00s]
+17:56:36.768541 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:41:17
+17:56:36.770335 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/marts/schema (2).yml:34:23
+17:56:36.770761 [warn ]: dbt1005: Unused schema.yml entry for model 'stg_users'
+  --> models/staging/schema.yml
+17:56:36.771583 [debug]: Finished parsing tests/assert_conversion_rate_not_zero.sql [  0.00s]
+17:56:36.772018 [debug]: Finished parsing tests/assert_no_future_events.sql [  0.00s]
+17:56:36.772365 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_id.sql [  0.00s]
+17:56:36.772798 [debug]: Finished parsing target/generic_tests/source_unique_raw_raw_auth_events_event_id.sql [  0.00s]
+17:56:36.773178 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_ts.sql [  0.00s]
+17:56:36.773589 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_type.sql [  0.00s]
+17:56:36.773935 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_user_id.sql [  0.00s]
+17:56:36.774263 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_users_user_id.sql [  0.00s]
+17:56:36.774542 [debug]: Finished parsing target/generic_tests/source_unique_raw_raw_users_user_id.sql [  0.00s]
+17:56:36.774830 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_login_conversion_rate.sql [  0.00s]
+17:56:36.775129 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_metric_date.sql [  0.00s]
+17:56:36.775415 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_mfa_pass_rate.sql [  0.00s]
+17:56:36.775698 [debug]: Finished parsing target/generic_tests/accepted_values_stg_auth_event_a54bc1b7532cccac4504d39a4f00b8bc.sql [  0.00s]
+17:56:36.776005 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_id.sql [  0.00s]
+17:56:36.776324 [debug]: Finished parsing target/generic_tests/unique_stg_auth_events_event_id.sql [  0.00s]
+17:56:36.776611 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_ts.sql [  0.00s]
+17:56:36.776902 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_type.sql [  0.00s]
+17:56:36.777228 [debug]: Finished parsing target/generic_tests/accepted_values_stg_auth_event_115c2a2d0872c7144fbe5da9c827f075.sql [  0.00s]
+17:56:36.777523 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_user_id.sql [  0.00s]
+17:56:36.777802 [debug]: Finished parsing target/generic_tests/not_null_user_friction_scores_friction_score.sql [  0.00s]
+17:56:36.778094 [debug]: Finished parsing target/generic_tests/accepted_values_user_friction__e793b44a99c4da8c4a400eceeb72ec9a.sql [  0.00s]
+17:56:36.778419 [debug]: Finished parsing target/generic_tests/not_null_user_friction_scores_user_id.sql [  0.00s]
+17:56:36.782914 [debug]: Finished parsing target/generic_tests/unique_user_friction_scores_user_id.sql [  0.00s]
+17:56:36.783105 [error]: dbt1005: Ref 'stg_users' not found in project. Searched for 'spotify_user_platform.stg_users, stg_users'
+  --> models/marts/user_friction_scores.sql:11:19
+17:56:36.783347 [info ]: Cached model count updated: 5 models (estimate)
+17:56:36.783355 [info ]: Cached model count updated: 5 models (accurate)
+17:56:36.783405 [info ]: Started scheduling
+17:56:36.783476 [info ]: Finished scheduling [  0.00s]
+17:56:36.783487 [info ]: Started scheduling
+17:56:36.783530 [info ]: Finished scheduling [  0.00s]
+17:56:36.783556 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "spotify_iam", schema: "main", table: "raw_auth_events" }) and interval: None
+17:56:36.783801 [info ]: Started deferring state
+17:56:36.783808 [info ]: Finished deferring state [  0.00s]
+17:56:36.784000 [info ]: Started downloading schemas
+17:56:36.784032 [info ]: Finished parsing [  0.04s]
+17:56:36.794648 [debug]: Query executed on node unknown:
+DESCRIBE "spotify_iam"."main"."raw_auth_events";
+17:56:37.797351 [warn ]: dbt1014: Failed to download source schema for 'source.spotify_user_platform.raw.raw_auth_events'. Setting 'static_analysis' to off. Skipping analysis for 'model.spotify_user_platform.stg_auth_events', 'test.spotify_user_platform.source_not_null_raw_raw_auth_events_event_id.588af888ea' and 4 others: Catalog Error: Table with name raw_auth_events does not exist!
+Did you mean "information_schema.character_sets"?
+
+LINE 1: DESCRIBE "spotify_iam"."main"."raw_auth_events";
+                 ^
+17:56:37.890729 [info ]: Started building task graph
+17:56:37.890796 [info ]: Finished building task graph [  0.00s]
+17:56:37.890878 [info ]: Started rendering (5 nodes)
+17:56:37.890888 [info ]: Started model main.int_user_sessions
+17:56:37.890896 [debug]: Started rendering model main.int_user_sessions
+17:56:37.890916 [info ]: Started model main.int_auth_funnel
+17:56:37.890922 [debug]: Started rendering model main.int_auth_funnel
+17:56:37.890930 [info ]: Started model main_staging.stg_auth_events
+17:56:37.890934 [debug]: Started rendering model main_staging.stg_auth_events
+17:56:37.890949 [info ]: Finished downloading schemas [  1.11s]
+17:56:37.892164 [debug]: Compiled SQL for node model.spotify_user_platform.stg_auth_events at target/.lsp/compiled/models/staging/stg_auth_events.sql
+17:56:37.892236 [info ]:  Succeeded [  0.00s] model main_staging.stg_auth_events (view)
+17:56:37.892252 [debug]: Finished rendering [  0.00s] model main_staging.stg_auth_events [success]
+17:56:37.892473 [debug]: Compiled SQL for node model.spotify_user_platform.int_auth_funnel at target/.lsp/compiled/models/intermediate/int_auth_funnel.sql
+17:56:37.892498 [info ]:  Succeeded [  0.00s] model main.int_auth_funnel (ephemeral)
+17:56:37.892545 [debug]: Finished rendering [  0.00s] model main.int_auth_funnel [success]
+17:56:37.892545 [debug]: Compiled SQL for node model.spotify_user_platform.int_user_sessions at target/.lsp/compiled/models/intermediate/int_user_sessions.sql
+17:56:37.892612 [info ]:  Succeeded [  0.00s] model main.int_user_sessions (ephemeral)
+17:56:37.892624 [debug]: Finished rendering [  0.00s] model main.int_user_sessions [success]
+17:56:37.892631 [info ]: Started model main_marts.fct_daily_auth_metrics
+17:56:37.892636 [debug]: Started rendering model main_marts.fct_daily_auth_metrics
+17:56:37.892647 [info ]: Started model main_marts.user_friction_scores
+17:56:37.892653 [debug]: Started rendering model main_marts.user_friction_scores
+17:56:37.892989 [error]: dbt1501: Failed to render SQL not a key type: ref not found for package: spotify_user_platform, model: stg_users, version: None
+(in models/marts/user_friction_scores.sql:11:19)
+  --> models/marts/user_friction_scores.sql:11:19
+17:56:37.893004 [info ]:     Failed [-------] model main_marts.user_friction_scores (table)
+17:56:37.893024 [debug]: Finished rendering [  0.00s] model main_marts.user_friction_scores [error]
+17:56:37.893695 [debug]: Compiled SQL for node model.spotify_user_platform.fct_daily_auth_metrics at target/.lsp/compiled/models/marts/fct_daily_auth_metrics.sql
+17:56:37.893719 [info ]:  Succeeded [  0.00s] model main_marts.fct_daily_auth_metrics (table)
+17:56:37.893733 [debug]: Finished rendering [  0.00s] model main_marts.fct_daily_auth_metrics [success]
+17:56:37.893741 [info ]: Finished rendering [  0.00s] (5 nodes, 0 skipped, 1 errors)
+17:56:37.896567 [info ]: Cached model count updated: 5 models (accurate)
+17:56:44.436192 [info ]: Started loading project
+17:56:44.436830 [info ]: Loading profiles.yml
+17:56:44.439124 [info ]: Started loading project
+17:56:44.439267 [info ]: Loading profiles.yml
+17:56:44.439294 [info ]: Finished loading project [  0.00s]
+17:56:44.581442 [debug]:    Started loading packages
+17:56:44.582367 [debug]:     Loaded [  0.00s] packages
+17:56:44.582851 [info ]: Started parsing
+17:56:44.596856 [info ]: Finished loading project [  0.16s]
+17:56:44.597478 [debug]: Finished parsing models/marts/schema.yml [  0.00s]
+17:56:44.597916 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+17:56:44.600777 [debug]: Finished parsing models/intermediate/int_auth_funnel.sql [  0.00s]
+17:56:44.601327 [debug]: Finished parsing models/intermediate/int_user_sessions.sql [  0.00s]
+17:56:44.601866 [debug]: Finished parsing models/marts/fct_daily_auth_metrics.sql [  0.00s]
+17:56:44.602400 [debug]: Finished parsing models/marts/user_friction_scores.sql [  0.00s]
+17:56:44.604327 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:62:23
+17:56:44.604391 [debug]: Finished parsing models/staging/stg_auth_events.sql [  0.00s]
+17:56:44.605244 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:41:17
+17:56:44.606114 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/marts/schema.yml:34:23
+17:56:44.606804 [warn ]: dbt1005: Unused schema.yml entry for model 'stg_users'
+  --> models/staging/schema.yml
+17:56:44.607492 [debug]: Finished parsing tests/assert_conversion_rate_not_zero.sql [  0.00s]
+17:56:44.607817 [debug]: Finished parsing tests/assert_no_future_events.sql [  0.00s]
+17:56:44.608218 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_id.sql [  0.00s]
+17:56:44.608472 [debug]: Finished parsing target/generic_tests/source_unique_raw_raw_auth_events_event_id.sql [  0.00s]
+17:56:44.608777 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_ts.sql [  0.00s]
+17:56:44.609102 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_type.sql [  0.00s]
+17:56:44.609412 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_user_id.sql [  0.00s]
+17:56:44.609831 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_users_user_id.sql [  0.00s]
+17:56:44.610122 [debug]: Finished parsing target/generic_tests/source_unique_raw_raw_users_user_id.sql [  0.00s]
+17:56:44.610523 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_login_conversion_rate.sql [  0.00s]
+17:56:44.611046 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_metric_date.sql [  0.00s]
+17:56:44.611411 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_mfa_pass_rate.sql [  0.00s]
+17:56:44.611818 [debug]: Finished parsing target/generic_tests/accepted_values_stg_auth_event_a54bc1b7532cccac4504d39a4f00b8bc.sql [  0.00s]
+17:56:44.612122 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_id.sql [  0.00s]
+17:56:44.612501 [debug]: Finished parsing target/generic_tests/unique_stg_auth_events_event_id.sql [  0.00s]
+17:56:44.612791 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_ts.sql [  0.00s]
+17:56:44.613183 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_type.sql [  0.00s]
+17:56:44.613490 [debug]: Finished parsing target/generic_tests/accepted_values_stg_auth_event_115c2a2d0872c7144fbe5da9c827f075.sql [  0.00s]
+17:56:44.613745 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_user_id.sql [  0.00s]
+17:56:44.614008 [debug]: Finished parsing target/generic_tests/not_null_user_friction_scores_friction_score.sql [  0.00s]
+17:56:44.614251 [debug]: Finished parsing target/generic_tests/accepted_values_user_friction__e793b44a99c4da8c4a400eceeb72ec9a.sql [  0.00s]
+17:56:44.614483 [debug]: Finished parsing target/generic_tests/not_null_user_friction_scores_user_id.sql [  0.00s]
+17:56:44.618776 [debug]: Finished parsing target/generic_tests/unique_user_friction_scores_user_id.sql [  0.00s]
+17:56:44.618984 [error]: dbt1005: Ref 'stg_users' not found in project. Searched for 'spotify_user_platform.stg_users, stg_users'
+  --> models/marts/user_friction_scores.sql:11:19
+17:56:44.619215 [info ]: Cached model count updated: 5 models (estimate)
+17:56:44.619224 [info ]: Cached model count updated: 5 models (accurate)
+17:56:44.619268 [info ]: Started scheduling
+17:56:44.619343 [info ]: Finished scheduling [  0.00s]
+17:56:44.619354 [info ]: Started scheduling
+17:56:44.619397 [info ]: Finished scheduling [  0.00s]
+17:56:44.619419 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "spotify_iam", schema: "main", table: "raw_auth_events" }) and interval: None
+17:56:44.619665 [info ]: Started deferring state
+17:56:44.619672 [info ]: Finished deferring state [  0.00s]
+17:56:44.619873 [info ]: Started downloading schemas
+17:56:44.619903 [info ]: Finished parsing [  0.04s]
+17:56:44.630296 [debug]: Query executed on node unknown:
+DESCRIBE "spotify_iam"."main"."raw_auth_events";
+17:56:45.632300 [warn ]: dbt1014: Failed to download source schema for 'source.spotify_user_platform.raw.raw_auth_events'. Setting 'static_analysis' to off. Skipping analysis for 'model.spotify_user_platform.stg_auth_events', 'test.spotify_user_platform.source_not_null_raw_raw_auth_events_event_id.588af888ea' and 4 others: Catalog Error: Table with name raw_auth_events does not exist!
+Did you mean "information_schema.character_sets"?
+
+LINE 1: DESCRIBE "spotify_iam"."main"."raw_auth_events";
+                 ^
+17:56:45.727466 [info ]: Started building task graph
+17:56:45.727534 [info ]: Finished building task graph [  0.00s]
+17:56:45.727628 [info ]: Started rendering (5 nodes)
+17:56:45.727639 [info ]: Started model main.int_user_sessions
+17:56:45.727647 [debug]: Started rendering model main.int_user_sessions
+17:56:45.727667 [info ]: Started model main.int_auth_funnel
+17:56:45.727673 [debug]: Started rendering model main.int_auth_funnel
+17:56:45.727680 [info ]: Started model main_staging.stg_auth_events
+17:56:45.727684 [debug]: Started rendering model main_staging.stg_auth_events
+17:56:45.727698 [info ]: Finished downloading schemas [  1.11s]
+17:56:45.728918 [debug]: Compiled SQL for node model.spotify_user_platform.stg_auth_events at target/.lsp/compiled/models/staging/stg_auth_events.sql
+17:56:45.728953 [info ]:  Succeeded [  0.00s] model main_staging.stg_auth_events (view)
+17:56:45.728998 [debug]: Finished rendering [  0.00s] model main_staging.stg_auth_events [success]
+17:56:45.729130 [debug]: Compiled SQL for node model.spotify_user_platform.int_auth_funnel at target/.lsp/compiled/models/intermediate/int_auth_funnel.sql
+17:56:45.729174 [info ]:  Succeeded [  0.00s] model main.int_auth_funnel (ephemeral)
+17:56:45.729174 [debug]: Compiled SQL for node model.spotify_user_platform.int_user_sessions at target/.lsp/compiled/models/intermediate/int_user_sessions.sql
+17:56:45.729195 [debug]: Finished rendering [  0.00s] model main.int_auth_funnel [success]
+17:56:45.729218 [info ]:  Succeeded [  0.00s] model main.int_user_sessions (ephemeral)
+17:56:45.729227 [debug]: Finished rendering [  0.00s] model main.int_user_sessions [success]
+17:56:45.729234 [info ]: Started model main_marts.fct_daily_auth_metrics
+17:56:45.729240 [debug]: Started rendering model main_marts.fct_daily_auth_metrics
+17:56:45.729252 [info ]: Started model main_marts.user_friction_scores
+17:56:45.729258 [debug]: Started rendering model main_marts.user_friction_scores
+17:56:45.729620 [error]: dbt1501: Failed to render SQL not a key type: ref not found for package: spotify_user_platform, model: stg_users, version: None
+(in models/marts/user_friction_scores.sql:11:19)
+  --> models/marts/user_friction_scores.sql:11:19
+17:56:45.729631 [info ]:     Failed [-------] model main_marts.user_friction_scores (table)
+17:56:45.729649 [debug]: Finished rendering [  0.00s] model main_marts.user_friction_scores [error]
+17:56:45.730500 [debug]: Compiled SQL for node model.spotify_user_platform.fct_daily_auth_metrics at target/.lsp/compiled/models/marts/fct_daily_auth_metrics.sql
+17:56:45.730525 [info ]:  Succeeded [  0.00s] model main_marts.fct_daily_auth_metrics (table)
+17:56:45.730535 [debug]: Finished rendering [  0.00s] model main_marts.fct_daily_auth_metrics [success]
+17:56:45.730539 [info ]: Finished rendering [  0.00s] (5 nodes, 0 skipped, 1 errors)
+17:56:45.733231 [info ]: Cached model count updated: 5 models (accurate)
+17:58:49.227814 [info ]: Started loading project
+17:58:49.228319 [info ]: Loading profiles.yml
+17:58:49.230404 [info ]: Started loading project
+17:58:49.230568 [info ]: Loading profiles.yml
+17:58:49.230591 [info ]: Finished loading project [  0.00s]
+17:58:49.374351 [debug]:    Started loading packages
+17:58:49.375341 [debug]:     Loaded [  0.00s] packages
+17:58:49.375817 [info ]: Started parsing
+17:58:49.389605 [info ]: Finished loading project [  0.16s]
+17:58:49.390246 [debug]: Finished parsing models/marts/schema.yml [  0.00s]
+17:58:49.390640 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+17:58:49.393688 [debug]: Finished parsing models/intermediate/int_auth_funnel.sql [  0.00s]
+17:58:49.394086 [debug]: Finished parsing models/intermediate/int_user_sessions.sql [  0.00s]
+17:58:49.394466 [debug]: Finished parsing models/marts/fct_daily_auth_metrics.sql [  0.00s]
+17:58:49.394844 [debug]: Finished parsing models/marts/user_friction_scores.sql [  0.00s]
+17:58:49.395143 [debug]: Finished parsing models/staging/stg_auth_events.sql [  0.00s]
+17:58:49.397172 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:62:23
+17:58:49.397233 [debug]: Finished parsing models/staging/stg_users.sql [  0.00s]
+17:58:49.398413 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:41:17
+17:58:49.399222 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:74:23
+17:58:49.400175 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/marts/schema.yml:34:23
+17:58:49.401332 [debug]: Finished parsing tests/assert_conversion_rate_not_zero.sql [  0.00s]
+17:58:49.401597 [debug]: Finished parsing tests/assert_no_future_events.sql [  0.00s]
+17:58:49.401986 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_id.sql [  0.00s]
+17:58:49.402537 [debug]: Finished parsing target/generic_tests/source_unique_raw_raw_auth_events_event_id.sql [  0.00s]
+17:58:49.402871 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_ts.sql [  0.00s]
+17:58:49.403253 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_type.sql [  0.00s]
+17:58:49.403685 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_user_id.sql [  0.00s]
+17:58:49.403956 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_users_user_id.sql [  0.00s]
+17:58:49.404283 [debug]: Finished parsing target/generic_tests/source_unique_raw_raw_users_user_id.sql [  0.00s]
+17:58:49.404634 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_login_conversion_rate.sql [  0.00s]
+17:58:49.404906 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_metric_date.sql [  0.00s]
+17:58:49.405151 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_mfa_pass_rate.sql [  0.00s]
+17:58:49.405600 [debug]: Finished parsing target/generic_tests/accepted_values_stg_auth_event_a54bc1b7532cccac4504d39a4f00b8bc.sql [  0.00s]
+17:58:49.405925 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_id.sql [  0.00s]
+17:58:49.406215 [debug]: Finished parsing target/generic_tests/unique_stg_auth_events_event_id.sql [  0.00s]
+17:58:49.406466 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_ts.sql [  0.00s]
+17:58:49.406722 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_type.sql [  0.00s]
+17:58:49.407000 [debug]: Finished parsing target/generic_tests/accepted_values_stg_auth_event_115c2a2d0872c7144fbe5da9c827f075.sql [  0.00s]
+17:58:49.407313 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_user_id.sql [  0.00s]
+17:58:49.407843 [debug]: Finished parsing target/generic_tests/accepted_values_stg_users_28422ce1ac6d68b1823fae6880fc2164.sql [  0.00s]
+17:58:49.408120 [debug]: Finished parsing target/generic_tests/not_null_stg_users_user_id.sql [  0.00s]
+17:58:49.408584 [debug]: Finished parsing target/generic_tests/unique_stg_users_user_id.sql [  0.00s]
+17:58:49.408887 [debug]: Finished parsing target/generic_tests/not_null_user_friction_scores_friction_score.sql [  0.00s]
+17:58:49.409179 [debug]: Finished parsing target/generic_tests/accepted_values_user_friction__e793b44a99c4da8c4a400eceeb72ec9a.sql [  0.00s]
+17:58:49.409514 [debug]: Finished parsing target/generic_tests/not_null_user_friction_scores_user_id.sql [  0.00s]
+17:58:49.414334 [debug]: Finished parsing target/generic_tests/unique_user_friction_scores_user_id.sql [  0.00s]
+17:58:49.414596 [info ]: Finished parsing [  0.04s]
+17:58:49.414785 [info ]: Cached model count updated: 6 models (estimate)
+17:58:49.414793 [info ]: Cached model count updated: 6 models (accurate)
+17:58:49.414842 [info ]: Started scheduling
+17:58:49.414923 [info ]: Finished scheduling [  0.00s]
+17:58:49.414932 [info ]: Started scheduling
+17:58:49.414981 [info ]: Finished scheduling [  0.00s]
+17:58:49.415151 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "spotify_iam", schema: "main_staging", table: "stg_users" }) and interval: None
+17:58:49.415166 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "spotify_iam", schema: "main", table: "raw_auth_events" }) and interval: None
+17:58:49.415426 [info ]: Started deferring state
+17:58:49.415433 [info ]: Finished deferring state [  0.00s]
+17:58:49.415650 [info ]: Started downloading schemas
+17:58:49.427468 [debug]: Query executed on node unknown:
+DESCRIBE "spotify_iam"."main"."raw_auth_events";
+17:58:49.427485 [debug]: Query executed on node unknown:
+DESCRIBE "spotify_iam"."main_staging"."stg_users";
+17:58:50.432628 [warn ]: dbt1014: Failed to download model schema for 'model.spotify_user_platform.stg_users'. Setting 'static_analysis' to off. Skipping analysis for 'model.spotify_user_platform.user_friction_scores', 'test.spotify_user_platform.accepted_values_stg_users_28422ce1ac6d68b1823fae6880fc2164.f62e83a225' and 2 others: Catalog Error: Table with name stg_users does not exist!
+Did you mean "main.sqlite_master"?
+
+LINE 1: DESCRIBE "spotify_iam"."main_staging"."stg_users";
+                 ^
+17:58:50.432683 [warn ]: dbt1014: Failed to download source schema for 'source.spotify_user_platform.raw.raw_auth_events'. Setting 'static_analysis' to off. Skipping analysis for 'model.spotify_user_platform.stg_auth_events', 'test.spotify_user_platform.source_not_null_raw_raw_auth_events_event_id.588af888ea' and 4 others: Catalog Error: Table with name raw_auth_events does not exist!
+Did you mean "information_schema.character_sets"?
+
+LINE 1: DESCRIBE "spotify_iam"."main"."raw_auth_events";
+                 ^
+17:58:50.528253 [info ]: Started building task graph
+17:58:50.528326 [info ]: Finished building task graph [  0.00s]
+17:58:50.528423 [info ]: Started rendering (5 nodes)
+17:58:50.528434 [info ]: Started model main.int_user_sessions
+17:58:50.528442 [debug]: Started rendering model main.int_user_sessions
+17:58:50.528464 [info ]: Started model main.int_auth_funnel
+17:58:50.528471 [debug]: Started rendering model main.int_auth_funnel
+17:58:50.528479 [info ]: Started model main_staging.stg_auth_events
+17:58:50.528483 [debug]: Started rendering model main_staging.stg_auth_events
+17:58:50.528494 [info ]: Finished downloading schemas [  1.11s]
+17:58:50.529967 [debug]: Compiled SQL for node model.spotify_user_platform.stg_auth_events at target/.lsp/compiled/models/staging/stg_auth_events.sql
+17:58:50.530004 [info ]:  Succeeded [  0.00s] model main_staging.stg_auth_events (view)
+17:58:50.530018 [debug]: Finished rendering [  0.00s] model main_staging.stg_auth_events [success]
+17:58:50.530135 [debug]: Compiled SQL for node model.spotify_user_platform.int_auth_funnel at target/.lsp/compiled/models/intermediate/int_auth_funnel.sql
+17:58:50.530158 [info ]:  Succeeded [  0.00s] model main.int_auth_funnel (ephemeral)
+17:58:50.530170 [debug]: Finished rendering [  0.00s] model main.int_auth_funnel [success]
+17:58:50.530176 [debug]: Compiled SQL for node model.spotify_user_platform.int_user_sessions at target/.lsp/compiled/models/intermediate/int_user_sessions.sql
+17:58:50.530191 [info ]:  Succeeded [  0.00s] model main.int_user_sessions (ephemeral)
+17:58:50.530202 [info ]: Started model main_marts.user_friction_scores
+17:58:50.530211 [debug]: Started rendering model main_marts.user_friction_scores
+17:58:50.530220 [info ]: Started model main_marts.fct_daily_auth_metrics
+17:58:50.530225 [debug]: Started rendering model main_marts.fct_daily_auth_metrics
+17:58:50.530238 [debug]: Finished rendering [  0.00s] model main.int_user_sessions [success]
+17:58:50.531000 [debug]: Compiled SQL for node model.spotify_user_platform.user_friction_scores at target/.lsp/compiled/models/marts/user_friction_scores.sql
+17:58:50.531020 [info ]:  Succeeded [-------] model main_marts.user_friction_scores (table)
+17:58:50.531032 [debug]: Finished rendering [  0.00s] model main_marts.user_friction_scores [success]
+17:58:50.531375 [debug]: Compiled SQL for node model.spotify_user_platform.fct_daily_auth_metrics at target/.lsp/compiled/models/marts/fct_daily_auth_metrics.sql
+17:58:50.531407 [info ]:  Succeeded [  0.00s] model main_marts.fct_daily_auth_metrics (table)
+17:58:50.531421 [debug]: Finished rendering [  0.00s] model main_marts.fct_daily_auth_metrics [success]
+17:58:50.531425 [info ]: Finished rendering [  0.00s] (5 nodes, 0 skipped, 0 errors)
+17:58:50.534157 [info ]: Cached model count updated: 6 models (accurate)
+17:59:47.394446 [info ]: Started loading project
+17:59:47.394912 [info ]: Loading profiles.yml
+17:59:47.396888 [info ]: Started loading project
+17:59:47.397033 [info ]: Loading profiles.yml
+17:59:47.397058 [info ]: Finished loading project [  0.00s]
+17:59:47.540602 [debug]:    Started loading packages
+17:59:47.541663 [debug]:     Loaded [  0.00s] packages
+17:59:47.542174 [info ]: Started parsing
+17:59:47.556897 [info ]: Finished loading project [  0.16s]
+17:59:47.559839 [debug]: Finished parsing models/marts/schema.yml [  0.00s]
+17:59:47.563436 [debug]: Finished parsing models/intermediate/int_auth_funnel.sql [  0.00s]
+17:59:47.564130 [debug]: Finished parsing models/intermediate/int_user_sessions.sql [  0.00s]
+17:59:47.564562 [debug]: Finished parsing models/marts/fct_daily_auth_metrics.sql [  0.00s]
+17:59:47.564926 [debug]: Finished parsing models/marts/user_friction_scores.sql [  0.00s]
+17:59:47.565232 [debug]: Finished parsing models/staging/stg_auth_events.sql [  0.00s]
+17:59:47.568739 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/marts/schema.yml:34:23
+17:59:47.568818 [debug]: Finished parsing models/staging/stg_users.sql [  0.00s]
+17:59:47.570675 [debug]: Finished parsing tests/assert_conversion_rate_not_zero.sql [  0.00s]
+17:59:47.571055 [debug]: Finished parsing tests/assert_no_future_events.sql [  0.00s]
+17:59:47.571370 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_login_conversion_rate.sql [  0.00s]
+17:59:47.571729 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_metric_date.sql [  0.00s]
+17:59:47.572209 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_mfa_pass_rate.sql [  0.00s]
+17:59:47.572602 [debug]: Finished parsing target/generic_tests/not_null_user_friction_scores_friction_score.sql [  0.00s]
+17:59:47.573037 [debug]: Finished parsing target/generic_tests/accepted_values_user_friction__e793b44a99c4da8c4a400eceeb72ec9a.sql [  0.00s]
+17:59:47.573330 [debug]: Finished parsing target/generic_tests/not_null_user_friction_scores_user_id.sql [  0.00s]
+17:59:47.575231 [debug]: Finished parsing target/generic_tests/unique_user_friction_scores_user_id.sql [  0.00s]
+17:59:47.575429 [error]: dbt1005: Source 'raw.raw_auth_events' not found in project. Searched for 'raw_auth_events'
+  --> models/staging/stg_auth_events.sql:6:19
+17:59:47.575624 [info ]: Cached model count updated: 6 models (estimate)
+17:59:47.575630 [info ]: Cached model count updated: 6 models (accurate)
+17:59:47.575656 [info ]: Started scheduling
+17:59:47.575713 [info ]: Finished scheduling [  0.00s]
+17:59:47.575722 [info ]: Started scheduling
+17:59:47.575753 [info ]: Finished scheduling [  0.00s]
+17:59:47.575776 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "spotify_iam", schema: "main_staging", table: "stg_users" }) and interval: None
+17:59:47.576056 [info ]: Started deferring state
+17:59:47.576063 [info ]: Finished deferring state [  0.00s]
+17:59:47.576266 [info ]: Started downloading schemas
+17:59:47.576296 [info ]: Finished parsing [  0.03s]
+17:59:47.586641 [debug]: Query executed on node unknown:
+DESCRIBE "spotify_iam"."main_staging"."stg_users";
+17:59:48.591905 [warn ]: dbt1014: Failed to download model schema for 'model.spotify_user_platform.stg_users'. Setting 'static_analysis' to off. Skipping analysis for 'model.spotify_user_platform.user_friction_scores': Catalog Error: Table with name stg_users does not exist!
+Did you mean "main.sqlite_master"?
+
+LINE 1: DESCRIBE "spotify_iam"."main_staging"."stg_users";
+                 ^
+17:59:48.690588 [info ]: Started building task graph
+17:59:48.690673 [info ]: Finished building task graph [  0.00s]
+17:59:48.690769 [info ]: Started rendering (5 nodes)
+17:59:48.690781 [info ]: Started model main_staging.stg_auth_events
+17:59:48.690790 [debug]: Started rendering model main_staging.stg_auth_events
+17:59:48.690832 [info ]: Finished downloading schemas [  1.11s]
+17:59:48.691250 [error]: dbt1501: Failed to render SQL not a key type: Source not found for source name: raw, table name: raw_auth_events
+(in models/staging/stg_auth_events.sql:6:19)
+  --> models/staging/stg_auth_events.sql:6:19
+17:59:48.691297 [info ]: Started analyzing (4 nodes)
+17:59:48.691306 [debug]: Started analyzing model main_staging.stg_auth_events
+17:59:48.691316 [debug]: Finished rendering [  0.00s] model main_staging.stg_auth_events [error]
+17:59:48.691318 [info ]:     Failed [-------] model main_staging.stg_auth_events (view)
+17:59:48.691328 [debug]: Finished analyzing [  0.00s] model main_staging.stg_auth_events [skipped]
+17:59:48.691335 [info ]: Started model main.int_user_sessions
+17:59:48.691340 [debug]: Started rendering model main.int_user_sessions
+17:59:48.691346 [debug]: Finished rendering [  0.00s] model main.int_user_sessions [skipped]
+17:59:48.691350 [debug]: Started analyzing model main.int_user_sessions
+17:59:48.691355 [info ]:    Skipped [-------] model main.int_user_sessions (ephemeral)
+17:59:48.691360 [debug]: Finished analyzing [  0.00s] model main.int_user_sessions [skipped]
+17:59:48.691365 [info ]: Started model main_marts.user_friction_scores
+17:59:48.691369 [debug]: Started rendering model main_marts.user_friction_scores
+17:59:48.691373 [info ]:    Skipped [-------] model main_marts.user_friction_scores (table)
+17:59:48.691377 [debug]: Finished rendering [  0.00s] model main_marts.user_friction_scores [skipped]
+17:59:48.691382 [info ]: Started model main.int_auth_funnel
+17:59:48.691385 [debug]: Started rendering model main.int_auth_funnel
+17:59:48.691389 [debug]: Finished rendering [  0.00s] model main.int_auth_funnel [skipped]
+17:59:48.691393 [debug]: Started analyzing model main.int_auth_funnel
+17:59:48.691397 [info ]:    Skipped [-------] model main.int_auth_funnel (ephemeral)
+17:59:48.691400 [debug]: Finished analyzing [  0.00s] model main.int_auth_funnel [skipped]
+17:59:48.691405 [info ]: Started model main_marts.fct_daily_auth_metrics
+17:59:48.691408 [debug]: Started rendering model main_marts.fct_daily_auth_metrics
+17:59:48.691414 [debug]: Finished rendering [  0.00s] model main_marts.fct_daily_auth_metrics [skipped]
+17:59:48.691417 [info ]: Finished rendering [  0.00s] (5 nodes, 4 skipped, 1 errors)
+17:59:48.691421 [debug]: Started analyzing model main_marts.fct_daily_auth_metrics
+17:59:48.691426 [info ]:    Skipped [-------] model main_marts.fct_daily_auth_metrics (table)
+17:59:48.691432 [debug]: Finished analyzing [  0.00s] model main_marts.fct_daily_auth_metrics [skipped]
+17:59:48.691434 [info ]: Finished analyzing [  0.00s] (4 nodes, 4 skipped, 0 errors)
+17:59:48.694651 [info ]: Cached model count updated: 6 models (accurate)
+17:59:55.937910 [info ]: Started loading project
+17:59:55.938300 [info ]: Loading profiles.yml
+17:59:55.940472 [info ]: Started loading project
+17:59:55.940602 [info ]: Loading profiles.yml
+17:59:55.940626 [info ]: Finished loading project [  0.00s]
+17:59:56.084211 [debug]:    Started loading packages
+17:59:56.085150 [debug]:     Loaded [  0.00s] packages
+17:59:56.085620 [info ]: Started parsing
+17:59:56.099446 [info ]: Finished loading project [  0.16s]
+17:59:56.100622 [debug]: Finished parsing models/intermediate/int_auth_funnel.sql [  0.00s]
+17:59:56.100978 [debug]: Finished parsing models/intermediate/int_user_sessions.sql [  0.00s]
+17:59:56.101369 [debug]: Finished parsing models/marts/fct_daily_auth_metrics.sql [  0.00s]
+17:59:56.101713 [debug]: Finished parsing models/marts/user_friction_scores.sql [  0.00s]
+17:59:56.102122 [debug]: Finished parsing models/staging/stg_auth_events.sql [  0.00s]
+17:59:56.103975 [debug]: Finished parsing models/staging/stg_users.sql [  0.00s]
+17:59:56.104346 [debug]: Finished parsing tests/assert_conversion_rate_not_zero.sql [  0.00s]
+17:59:56.104998 [debug]: Finished parsing tests/assert_no_future_events.sql [  0.00s]
+17:59:56.105235 [error]: dbt1005: Source 'raw.raw_auth_events' not found in project. Searched for 'raw_auth_events'
+  --> models/staging/stg_auth_events.sql:6:19
+17:59:56.105423 [info ]: Cached model count updated: 6 models (estimate)
+17:59:56.105429 [info ]: Cached model count updated: 6 models (accurate)
+17:59:56.105448 [info ]: Started scheduling
+17:59:56.105506 [info ]: Finished scheduling [  0.00s]
+17:59:56.105518 [info ]: Started scheduling
+17:59:56.105546 [info ]: Finished scheduling [  0.00s]
+17:59:56.105569 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "spotify_iam", schema: "main_staging", table: "stg_users" }) and interval: None
+17:59:56.105904 [info ]: Started deferring state
+17:59:56.105911 [info ]: Finished deferring state [  0.00s]
+17:59:56.106114 [info ]: Started downloading schemas
+17:59:56.106142 [info ]: Finished parsing [  0.02s]
+17:59:56.116884 [debug]: Query executed on node unknown:
+DESCRIBE "spotify_iam"."main_staging"."stg_users";
+17:59:57.120708 [warn ]: dbt1014: Failed to download model schema for 'model.spotify_user_platform.stg_users'. Setting 'static_analysis' to off. Skipping analysis for 'model.spotify_user_platform.user_friction_scores': Catalog Error: Table with name stg_users does not exist!
+Did you mean "main.sqlite_master"?
+
+LINE 1: DESCRIBE "spotify_iam"."main_staging"."stg_users";
+                 ^
+17:59:57.223609 [info ]: Started building task graph
+17:59:57.223685 [info ]: Finished building task graph [  0.00s]
+17:59:57.223770 [info ]: Started rendering (5 nodes)
+17:59:57.223781 [info ]: Started model main_staging.stg_auth_events
+17:59:57.223789 [debug]: Started rendering model main_staging.stg_auth_events
+17:59:57.223830 [info ]: Finished downloading schemas [  1.12s]
+17:59:57.224181 [error]: dbt1501: Failed to render SQL not a key type: Source not found for source name: raw, table name: raw_auth_events
+(in models/staging/stg_auth_events.sql:6:19)
+  --> models/staging/stg_auth_events.sql:6:19
+17:59:57.224231 [info ]: Started analyzing (4 nodes)
+17:59:57.224240 [debug]: Started analyzing model main_staging.stg_auth_events
+17:59:57.224247 [debug]: Finished rendering [  0.00s] model main_staging.stg_auth_events [error]
+17:59:57.224258 [info ]:     Failed [-------] model main_staging.stg_auth_events (view)
+17:59:57.224268 [debug]: Finished analyzing [  0.00s] model main_staging.stg_auth_events [skipped]
+17:59:57.224275 [info ]: Started model main.int_user_sessions
+17:59:57.224279 [debug]: Started rendering model main.int_user_sessions
+17:59:57.224285 [debug]: Finished rendering [  0.00s] model main.int_user_sessions [skipped]
+17:59:57.224290 [debug]: Started analyzing model main.int_user_sessions
+17:59:57.224298 [info ]:    Skipped [-------] model main.int_user_sessions (ephemeral)
+17:59:57.224303 [debug]: Finished analyzing [  0.00s] model main.int_user_sessions [skipped]
+17:59:57.224311 [info ]: Started model main_marts.user_friction_scores
+17:59:57.224315 [debug]: Started rendering model main_marts.user_friction_scores
+17:59:57.224319 [info ]:    Skipped [-------] model main_marts.user_friction_scores (table)
+17:59:57.224323 [debug]: Finished rendering [  0.00s] model main_marts.user_friction_scores [skipped]
+17:59:57.224328 [info ]: Started model main.int_auth_funnel
+17:59:57.224331 [debug]: Started rendering model main.int_auth_funnel
+17:59:57.224337 [debug]: Finished rendering [  0.00s] model main.int_auth_funnel [skipped]
+17:59:57.224341 [debug]: Started analyzing model main.int_auth_funnel
+17:59:57.224345 [info ]:    Skipped [-------] model main.int_auth_funnel (ephemeral)
+17:59:57.224349 [debug]: Finished analyzing [  0.00s] model main.int_auth_funnel [skipped]
+17:59:57.224354 [info ]: Started model main_marts.fct_daily_auth_metrics
+17:59:57.224357 [debug]: Started rendering model main_marts.fct_daily_auth_metrics
+17:59:57.224363 [debug]: Finished rendering [  0.00s] model main_marts.fct_daily_auth_metrics [skipped]
+17:59:57.224367 [info ]: Finished rendering [  0.00s] (5 nodes, 4 skipped, 1 errors)
+17:59:57.224371 [debug]: Started analyzing model main_marts.fct_daily_auth_metrics
+17:59:57.224375 [info ]:    Skipped [-------] model main_marts.fct_daily_auth_metrics (table)
+17:59:57.224381 [debug]: Finished analyzing [  0.00s] model main_marts.fct_daily_auth_metrics [skipped]
+17:59:57.224383 [info ]: Finished analyzing [  0.00s] (4 nodes, 4 skipped, 0 errors)
+17:59:57.227225 [info ]: Cached model count updated: 6 models (accurate)
+18:00:18.955186 [info ]: Started loading project
+18:00:18.955236 [info ]: Finished loading project [  0.00s]
+18:01:46.344037 [info ]: Loading profiles.yml
+18:01:46.353917 [info ]: Started loading project
+18:01:46.354203 [info ]: Loading profiles.yml
+18:01:46.496032 [debug]:    Started loading packages
+18:01:46.497796 [debug]:     Loaded [  0.00s] packages
+18:01:46.498291 [info ]: Started parsing
+18:01:46.512358 [info ]: Finished loading project [  0.16s]
+18:01:46.513164 [debug]: Finished parsing models/marts/schema.yml [  0.00s]
+18:01:46.513828 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+18:01:46.517511 [debug]: Finished parsing models/intermediate/int_auth_funnel.sql [  0.00s]
+18:01:46.517875 [debug]: Finished parsing models/intermediate/int_user_sessions.sql [  0.00s]
+18:01:46.518261 [debug]: Finished parsing models/marts/fct_daily_auth_metrics.sql [  0.00s]
+18:01:46.518664 [debug]: Finished parsing models/marts/user_friction_scores.sql [  0.00s]
+18:01:46.519062 [debug]: Finished parsing models/staging/stg_auth_events.sql [  0.00s]
+18:01:46.524416 [debug]: Finished parsing models/staging/stg_users.sql [  0.01s]
+18:01:46.524755 [debug]: Finished parsing tests/assert_conversion_rate_not_zero.sql [  0.00s]
+18:01:46.525077 [debug]: Finished parsing tests/assert_no_future_events.sql [  0.00s]
+18:01:46.525698 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_id.sql [  0.00s]
+18:01:46.526099 [debug]: Finished parsing target/generic_tests/source_unique_raw_raw_auth_events_event_id.sql [  0.00s]
+18:01:46.526490 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_ts.sql [  0.00s]
+18:01:46.526751 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_type.sql [  0.00s]
+18:01:46.527093 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_user_id.sql [  0.00s]
+18:01:46.527522 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_users_user_id.sql [  0.00s]
+18:01:46.527801 [debug]: Finished parsing target/generic_tests/source_unique_raw_raw_users_user_id.sql [  0.00s]
+18:01:46.528225 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_login_conversion_rate.sql [  0.00s]
+18:01:46.528689 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_metric_date.sql [  0.00s]
+18:01:46.529100 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_mfa_pass_rate.sql [  0.00s]
+18:01:46.529373 [debug]: Finished parsing target/generic_tests/accepted_values_device_category.sql [  0.00s]
+18:01:46.529645 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_id.sql [  0.00s]
+18:01:46.529869 [debug]: Finished parsing target/generic_tests/unique_stg_auth_events_event_id.sql [  0.00s]
+18:01:46.530099 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_ts.sql [  0.00s]
+18:01:46.530352 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_type.sql [  0.00s]
+18:01:46.530598 [debug]: Finished parsing target/generic_tests/accepted_values_event_type.sql [  0.00s]
+18:01:46.530824 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_user_id.sql [  0.00s]
+18:01:46.531109 [debug]: Finished parsing target/generic_tests/accepted_values_subscription_tier.sql [  0.00s]
+18:01:46.531393 [debug]: Finished parsing target/generic_tests/not_null_stg_users_user_id.sql [  0.00s]
+18:01:46.531652 [debug]: Finished parsing target/generic_tests/unique_stg_users_user_id.sql [  0.00s]
+18:01:46.531924 [debug]: Finished parsing target/generic_tests/not_null_user_friction_scores_friction_score.sql [  0.00s]
+18:01:46.532199 [debug]: Finished parsing target/generic_tests/accepted_values_friction_segment.sql [  0.00s]
+18:01:46.532515 [debug]: Finished parsing target/generic_tests/not_null_user_friction_scores_user_id.sql [  0.00s]
+18:01:46.537155 [debug]: Finished parsing target/generic_tests/unique_user_friction_scores_user_id.sql [  0.00s]
+18:01:46.537455 [info ]: Finished parsing [  0.04s]
+18:01:46.537628 [info ]: Cached model count updated: 6 models (estimate)
+18:01:46.537637 [info ]: Cached model count updated: 6 models (accurate)
+18:01:46.537688 [info ]: Started scheduling
+18:01:46.537765 [info ]: Finished scheduling [  0.00s]
+18:01:46.537774 [info ]: Started scheduling
+18:01:46.537818 [info ]: Finished scheduling [  0.00s]
+18:01:46.537844 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "spotify_iam", schema: "main", table: "raw_auth_events" }) and interval: None
+18:01:46.537855 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "spotify_iam", schema: "main", table: "stg_users" }) and interval: None
+18:01:46.538106 [info ]: Started deferring state
+18:01:46.538113 [info ]: Finished deferring state [  0.00s]
+18:01:46.538338 [info ]: Started downloading schemas
+18:01:46.550077 [debug]: Query executed on node unknown:
+DESCRIBE "spotify_iam"."main"."stg_users";
+18:01:46.550119 [debug]: Query executed on node unknown:
+DESCRIBE "spotify_iam"."main"."raw_auth_events";
+18:01:47.553080 [warn ]: dbt1014: Failed to download model schema for 'model.spotify_user_platform.stg_users'. Setting 'static_analysis' to off. Skipping analysis for 'model.spotify_user_platform.user_friction_scores', 'test.spotify_user_platform.accepted_values_subscription_tier.baf81221a2' and 2 others: Catalog Error: Table with name stg_users does not exist!
+Did you mean "main.sqlite_master"?
+
+LINE 1: DESCRIBE "spotify_iam"."main"."stg_users";
+                 ^
+18:01:47.553164 [warn ]: dbt1014: Failed to download source schema for 'source.spotify_user_platform.raw.raw_auth_events'. Setting 'static_analysis' to off. Skipping analysis for 'model.spotify_user_platform.stg_auth_events', 'test.spotify_user_platform.source_not_null_raw_raw_auth_events_event_id.588af888ea' and 4 others: Catalog Error: Table with name raw_auth_events does not exist!
+Did you mean "information_schema.character_sets"?
+
+LINE 1: DESCRIBE "spotify_iam"."main"."raw_auth_events";
+                 ^
+18:01:47.665040 [info ]: Started building task graph
+18:01:47.665113 [info ]: Finished building task graph [  0.00s]
+18:01:47.665201 [info ]: Started rendering (5 nodes)
+18:01:47.665212 [info ]: Started model main.int_user_sessions
+18:01:47.665219 [debug]: Started rendering model main.int_user_sessions
+18:01:47.665235 [info ]: Started model main.int_auth_funnel
+18:01:47.665243 [debug]: Started rendering model main.int_auth_funnel
+18:01:47.665248 [info ]: Started model main.stg_auth_events
+18:01:47.665252 [debug]: Started rendering model main.stg_auth_events
+18:01:47.665274 [info ]: Finished downloading schemas [  1.13s]
+18:01:47.666342 [debug]: Compiled SQL for node model.spotify_user_platform.stg_auth_events at target/.lsp/compiled/models/staging/stg_auth_events.sql
+18:01:47.666389 [info ]:  Succeeded [  0.00s] model main.stg_auth_events (view)
+18:01:47.666405 [debug]: Finished rendering [  0.00s] model main.stg_auth_events [success]
+18:01:47.666613 [debug]: Compiled SQL for node model.spotify_user_platform.int_auth_funnel at target/.lsp/compiled/models/intermediate/int_auth_funnel.sql
+18:01:47.666619 [debug]: Compiled SQL for node model.spotify_user_platform.int_user_sessions at target/.lsp/compiled/models/intermediate/int_user_sessions.sql
+18:01:47.666646 [info ]:  Succeeded [  0.00s] model main.int_user_sessions (ephemeral)
+18:01:47.666658 [debug]: Finished rendering [  0.00s] model main.int_user_sessions [success]
+18:01:47.666671 [info ]: Started model main.user_friction_scores
+18:01:47.666677 [debug]: Started rendering model main.user_friction_scores
+18:01:47.666689 [info ]:  Succeeded [  0.00s] model main.int_auth_funnel (ephemeral)
+18:01:47.666696 [debug]: Finished rendering [  0.00s] model main.int_auth_funnel [success]
+18:01:47.666703 [info ]: Started model main.fct_daily_auth_metrics
+18:01:47.666707 [debug]: Started rendering model main.fct_daily_auth_metrics
+18:01:47.667783 [debug]: Compiled SQL for node model.spotify_user_platform.user_friction_scores at target/.lsp/compiled/models/marts/user_friction_scores.sql
+18:01:47.667825 [info ]:  Succeeded [  0.00s] model main.user_friction_scores (table)
+18:01:47.667840 [debug]: Finished rendering [  0.00s] model main.user_friction_scores [success]
+18:01:47.667905 [debug]: Compiled SQL for node model.spotify_user_platform.fct_daily_auth_metrics at target/.lsp/compiled/models/marts/fct_daily_auth_metrics.sql
+18:01:47.667937 [info ]:  Succeeded [  0.00s] model main.fct_daily_auth_metrics (table)
+18:01:47.667949 [debug]: Finished rendering [  0.00s] model main.fct_daily_auth_metrics [success]
+18:01:47.667953 [info ]: Finished rendering [  0.00s] (5 nodes, 0 skipped, 0 errors)
+18:01:47.670626 [info ]: Cached model count updated: 6 models (accurate)
+18:05:37.275884 [info ]: Started loading project
+18:05:37.276541 [info ]: Loading profiles.yml
+18:05:37.280868 [info ]: Started parsing
+18:05:37.292009 [info ]: Finished loading project [  0.02s]
+18:05:37.292688 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+18:05:37.296687 [debug]: Finished parsing models/staging/stg_auth_events.sql [  0.00s]
+18:05:37.300276 [debug]: Finished parsing models/staging/stg_users.sql [  0.00s]
+18:05:37.300705 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_id.sql [  0.00s]
+18:05:37.301108 [debug]: Finished parsing target/generic_tests/source_unique_raw_raw_auth_events_event_id.sql [  0.00s]
+18:05:37.301674 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_ts.sql [  0.00s]
+18:05:37.302057 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_type.sql [  0.00s]
+18:05:37.302461 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_user_id.sql [  0.00s]
+18:05:37.302722 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_users_user_id.sql [  0.00s]
+18:05:37.302956 [debug]: Finished parsing target/generic_tests/source_unique_raw_raw_users_user_id.sql [  0.00s]
+18:05:37.303307 [debug]: Finished parsing target/generic_tests/accepted_values_device_category.sql [  0.00s]
+18:05:37.303641 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_id.sql [  0.00s]
+18:05:37.304068 [debug]: Finished parsing target/generic_tests/unique_stg_auth_events_event_id.sql [  0.00s]
+18:05:37.304509 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_ts.sql [  0.00s]
+18:05:37.304865 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_type.sql [  0.00s]
+18:05:37.305259 [debug]: Finished parsing target/generic_tests/accepted_values_event_type.sql [  0.00s]
+18:05:37.305594 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_user_id.sql [  0.00s]
+18:05:37.305909 [debug]: Finished parsing target/generic_tests/accepted_values_subscription_tier.sql [  0.00s]
+18:05:37.306203 [debug]: Finished parsing target/generic_tests/not_null_stg_users_user_id.sql [  0.00s]
+18:05:37.309459 [debug]: Finished parsing target/generic_tests/unique_stg_users_user_id.sql [  0.00s]
+18:05:37.309877 [info ]: Finished parsing [  0.03s]
+18:05:37.310591 [info ]: Cached model count updated: 6 models (estimate)
+18:05:37.310601 [info ]: Cached model count updated: 6 models (accurate)
+18:05:37.310652 [info ]: Started scheduling
+18:05:37.310897 [info ]: Finished scheduling [  0.00s]
+18:05:37.310909 [debug]: Incremental compilation - 3 nodes selected: {"model.spotify_user_platform.int_user_sessions", "model.spotify_user_platform.stg_users", "model.spotify_user_platform.user_friction_scores"}
+18:05:37.311132 [info ]: Started deferring state
+18:05:37.311139 [info ]: Finished deferring state [  0.00s]
+18:05:37.311358 [warn ]: dbt1014: Failed to download model schema for 'model.spotify_user_platform.stg_users'. Setting 'static_analysis' to off. Skipping analysis for 'model.spotify_user_platform.user_friction_scores', 'test.spotify_user_platform.accepted_values_subscription_tier.baf81221a2' and 2 others: Catalog Error: Table with name stg_users does not exist!
+Did you mean "main.sqlite_master"?
+
+LINE 1: DESCRIBE "spotify_iam"."main"."stg_users";
+                 ^
+18:05:37.311377 [warn ]: dbt1014: Failed to download source schema for 'source.spotify_user_platform.raw.raw_auth_events'. Setting 'static_analysis' to off. Skipping analysis for 'model.spotify_user_platform.stg_auth_events', 'test.spotify_user_platform.source_not_null_raw_raw_auth_events_event_id.588af888ea' and 4 others: Catalog Error: Table with name raw_auth_events does not exist!
+Did you mean "information_schema.character_sets"?
+
+LINE 1: DESCRIBE "spotify_iam"."main"."raw_auth_events";
+                 ^
+18:05:37.311386 [info ]: Started downloading schemas
+18:05:37.316274 [info ]: Finished downloading schemas [  0.00s]
+18:13:21.113212 [info ]: Started loading project
+18:13:21.113652 [info ]: Loading profiles.yml
+18:13:21.258591 [debug]:    Started loading packages
+18:13:21.260215 [debug]:     Loaded [  0.00s] packages
+18:13:21.260734 [info ]: Started parsing
+18:13:21.274768 [info ]: Finished loading project [  0.16s]
+18:13:21.275552 [debug]: Finished parsing models/marts/schema.yml [  0.00s]
+18:13:21.275987 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+18:13:21.278848 [debug]: Finished parsing models/intermediate/int_auth_funnel.sql [  0.00s]
+18:13:21.279235 [debug]: Finished parsing models/intermediate/int_user_sessions.sql [  0.00s]
+18:13:21.279678 [debug]: Finished parsing models/marts/fct_daily_auth_metrics.sql [  0.00s]
+18:13:21.280090 [debug]: Finished parsing models/marts/user_friction_scores.sql [  0.00s]
+18:13:21.280627 [debug]: Finished parsing models/staging/stg_auth_events.sql [  0.00s]
+18:13:21.286043 [debug]: Finished parsing models/staging/stg_users.sql [  0.01s]
+18:13:21.286334 [debug]: Finished parsing tests/assert_conversion_rate_not_zero.sql [  0.00s]
+18:13:21.286552 [debug]: Finished parsing tests/assert_no_future_events.sql [  0.00s]
+18:13:21.286882 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_id.sql [  0.00s]
+18:13:21.287122 [debug]: Finished parsing target/generic_tests/source_unique_raw_raw_auth_events_event_id.sql [  0.00s]
+18:13:21.287440 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_ts.sql [  0.00s]
+18:13:21.287729 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_event_type.sql [  0.00s]
+18:13:21.288083 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_auth_events_user_id.sql [  0.00s]
+18:13:21.288341 [debug]: Finished parsing target/generic_tests/source_not_null_raw_raw_users_user_id.sql [  0.00s]
+18:13:21.288591 [debug]: Finished parsing target/generic_tests/source_unique_raw_raw_users_user_id.sql [  0.00s]
+18:13:21.288850 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_login_conversion_rate.sql [  0.00s]
+18:13:21.289105 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_metric_date.sql [  0.00s]
+18:13:21.289400 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_mfa_pass_rate.sql [  0.00s]
+18:13:21.289684 [debug]: Finished parsing target/generic_tests/accepted_values_device_category.sql [  0.00s]
+18:13:21.289936 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_id.sql [  0.00s]
+18:13:21.290189 [debug]: Finished parsing target/generic_tests/unique_stg_auth_events_event_id.sql [  0.00s]
+18:13:21.290436 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_ts.sql [  0.00s]
+18:13:21.290688 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_event_type.sql [  0.00s]
+18:13:21.290969 [debug]: Finished parsing target/generic_tests/accepted_values_event_type.sql [  0.00s]
+18:13:21.291226 [debug]: Finished parsing target/generic_tests/not_null_stg_auth_events_user_id.sql [  0.00s]
+18:13:21.291528 [debug]: Finished parsing target/generic_tests/accepted_values_subscription_tier.sql [  0.00s]
+18:13:21.291803 [debug]: Finished parsing target/generic_tests/not_null_stg_users_user_id.sql [  0.00s]
+18:13:21.292049 [debug]: Finished parsing target/generic_tests/unique_stg_users_user_id.sql [  0.00s]
+18:13:21.292323 [debug]: Finished parsing target/generic_tests/not_null_user_friction_scores_friction_score.sql [  0.00s]
+18:13:21.292563 [debug]: Finished parsing target/generic_tests/accepted_values_friction_segment.sql [  0.00s]
+18:13:21.292910 [debug]: Finished parsing target/generic_tests/not_null_user_friction_scores_user_id.sql [  0.00s]
+18:13:21.297810 [debug]: Finished parsing target/generic_tests/unique_user_friction_scores_user_id.sql [  0.00s]
+18:13:21.298083 [info ]: Finished parsing [  0.04s]
+18:13:21.298254 [info ]: Cached model count updated: 6 models (estimate)
+18:13:21.298264 [info ]: Cached model count updated: 6 models (accurate)
+18:13:21.298312 [info ]: Started scheduling
+18:13:21.298394 [info ]: Finished scheduling [  0.00s]
+18:13:21.298402 [info ]: Started scheduling
+18:13:21.298450 [info ]: Finished scheduling [  0.00s]
+18:13:21.298476 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "spotify_iam", schema: "main", table: "raw_auth_events" }) and interval: None
+18:13:21.298487 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "spotify_iam", schema: "main", table: "raw_users" }) and interval: None
+18:13:21.298774 [info ]: Started deferring state
+18:13:21.298782 [info ]: Finished deferring state [  0.00s]
+18:13:21.299000 [info ]: Started downloading schemas
+18:13:21.307202 [debug]: Query executed on node unknown:
+DESCRIBE "spotify_iam"."main"."raw_users";
+18:13:21.307205 [debug]: Query executed on node unknown:
+DESCRIBE "spotify_iam"."main"."raw_auth_events";
+18:13:21.321231 [info ]: Downloaded "spotify_iam"."main"."raw_auth_events" (schema)
+18:13:21.322324 [info ]: Downloaded "spotify_iam"."main"."raw_users" (schema)
+18:13:21.419746 [info ]: Started building task graph
+18:13:21.419874 [info ]: Finished building task graph [  0.00s]
+18:13:21.419968 [info ]: Started rendering (6 nodes)
+18:13:21.419979 [info ]: Started model main.stg_users
+18:13:21.419987 [debug]: Started rendering model main.stg_users
+18:13:21.420004 [info ]: Started model main.stg_auth_events
+18:13:21.420009 [debug]: Started rendering model main.stg_auth_events
+18:13:21.420032 [info ]: Finished downloading schemas [  0.12s]
+18:13:21.420962 [debug]: Compiled SQL for node model.spotify_user_platform.stg_users at target/.lsp/compiled/models/staging/stg_users.sql
+18:13:21.421002 [info ]: Started analyzing (6 nodes)
+18:13:21.421003 [debug]: Finished rendering [  0.00s] model main.stg_users [success]
+18:13:21.421009 [debug]: Started analyzing model main.stg_users
+18:13:21.421144 [debug]: Compiled SQL for node model.spotify_user_platform.stg_auth_events at target/.lsp/compiled/models/staging/stg_auth_events.sql
+18:13:21.421169 [debug]: Started analyzing model main.stg_auth_events
+18:13:21.421175 [debug]: Finished rendering [  0.00s] model main.stg_auth_events [success]
+18:13:21.478638 [info ]:  Succeeded [  0.06s] model main.stg_users (view)
+18:13:21.478658 [debug]: Finished analyzing [  0.06s] model main.stg_users [success]
+18:13:21.478668 [info ]:  Succeeded [  0.06s] model main.stg_auth_events (view)
+18:13:21.478673 [debug]: Finished analyzing [  0.06s] model main.stg_auth_events [success]
+18:13:21.478684 [info ]: Started model main.int_auth_funnel
+18:13:21.478692 [debug]: Started rendering model main.int_auth_funnel
+18:13:21.478706 [info ]: Started model main.int_user_sessions
+18:13:21.478712 [debug]: Started rendering model main.int_user_sessions
+18:13:21.479860 [debug]: Compiled SQL for node model.spotify_user_platform.int_user_sessions at target/.lsp/compiled/models/intermediate/int_user_sessions.sql
+18:13:21.479878 [debug]: Compiled SQL for node model.spotify_user_platform.int_auth_funnel at target/.lsp/compiled/models/intermediate/int_auth_funnel.sql
+18:13:21.479916 [debug]: Finished rendering [  0.00s] model main.int_user_sessions [success]
+18:13:21.479927 [debug]: Started analyzing model main.int_user_sessions
+18:13:21.479939 [debug]: Finished rendering [  0.00s] model main.int_auth_funnel [success]
+18:13:21.479944 [debug]: Started analyzing model main.int_auth_funnel
+18:13:21.498513 [info ]:  Succeeded [  0.02s] model main.int_auth_funnel (ephemeral)
+18:13:21.498536 [debug]: Finished analyzing [  0.02s] model main.int_auth_funnel [success]
+18:13:21.501539 [info ]:  Succeeded [  0.02s] model main.int_user_sessions (ephemeral)
+18:13:21.501551 [debug]: Finished analyzing [  0.02s] model main.int_user_sessions [success]
+18:13:21.501566 [info ]: Started model main.fct_daily_auth_metrics
+18:13:21.501575 [debug]: Started rendering model main.fct_daily_auth_metrics
+18:13:21.501589 [info ]: Started model main.user_friction_scores
+18:13:21.501596 [debug]: Started rendering model main.user_friction_scores
+18:13:21.502685 [debug]: Compiled SQL for node model.spotify_user_platform.user_friction_scores at target/.lsp/compiled/models/marts/user_friction_scores.sql
+18:13:21.502713 [debug]: Finished rendering [  0.00s] model main.user_friction_scores [success]
+18:13:21.502715 [debug]: Started analyzing model main.user_friction_scores
+18:13:21.502856 [debug]: Compiled SQL for node model.spotify_user_platform.fct_daily_auth_metrics at target/.lsp/compiled/models/marts/fct_daily_auth_metrics.sql
+18:13:21.502882 [debug]: Started analyzing model main.fct_daily_auth_metrics
+18:13:21.502885 [debug]: Finished rendering [  0.00s] model main.fct_daily_auth_metrics [success]
+18:13:21.502890 [info ]: Finished rendering [  0.08s] (6 nodes, 0 skipped, 0 errors)
+18:13:21.537749 [error]: dbt0101: mismatched input 'as' expecting one of ',', 'EXCEPT', 'FROM', 'GROUP', 'HAVING', 'INTERSECT' ...
+  --> models/marts/fct_daily_auth_metrics.sql:62:134 (target/.lsp/compiled/models/marts/fct_daily_auth_metrics.sql:191:134)
+18:13:21.537781 [info ]:     Failed [  0.04s] model main.fct_daily_auth_metrics (table)
+18:13:21.537814 [debug]: Finished analyzing [  0.03s] model main.fct_daily_auth_metrics [error]
+18:13:21.799875 [info ]:  Succeeded [  0.30s] model main.user_friction_scores (table)
+18:13:21.799901 [debug]: Finished analyzing [  0.30s] model main.user_friction_scores [success]
+18:13:21.799908 [info ]: Finished analyzing [  0.38s] (6 nodes, 0 skipped, 1 errors)
+18:13:21.802417 [info ]: Cached model count updated: 6 models (accurate)
+18:18:11.608194 [info ]: Started loading project
+18:18:11.608715 [info ]: Loading profiles.yml
+18:18:11.612084 [info ]: Started parsing
+18:18:11.621527 [info ]: Finished loading project [  0.01s]
+18:18:11.622037 [debug]: Finished parsing models/marts/schema.yml [  0.00s]
+18:18:11.623336 [debug]: Finished parsing models/marts/fct_daily_auth_metrics.sql [  0.00s]
+18:18:11.626696 [debug]: Finished parsing models/marts/user_friction_scores.sql [  0.00s]
+18:18:11.627136 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_login_conversion_rate.sql [  0.00s]
+18:18:11.627446 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_metric_date.sql [  0.00s]
+18:18:11.627708 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_mfa_pass_rate.sql [  0.00s]
+18:18:11.627940 [debug]: Finished parsing target/generic_tests/not_null_user_friction_scores_friction_score.sql [  0.00s]
+18:18:11.628206 [debug]: Finished parsing target/generic_tests/accepted_values_friction_segment.sql [  0.00s]
+18:18:11.628454 [debug]: Finished parsing target/generic_tests/not_null_user_friction_scores_user_id.sql [  0.00s]
+18:18:11.629994 [debug]: Finished parsing target/generic_tests/unique_user_friction_scores_user_id.sql [  0.00s]
+18:18:11.630333 [info ]: Finished parsing [  0.02s]
+18:18:11.630965 [info ]: Cached model count updated: 6 models (estimate)
+18:18:11.630977 [info ]: Cached model count updated: 6 models (accurate)
+18:18:11.631024 [info ]: Started scheduling
+18:18:11.631141 [info ]: Finished scheduling [  0.00s]
+18:18:11.631149 [debug]: Incremental compilation - 3 nodes selected: {"model.spotify_user_platform.fct_daily_auth_metrics", "model.spotify_user_platform.int_auth_funnel", "model.spotify_user_platform.int_user_sessions"}
+18:18:11.631380 [info ]: Started deferring state
+18:18:11.631388 [info ]: Finished deferring state [  0.00s]
+18:18:11.728088 [info ]: Started building task graph
+18:18:11.728156 [info ]: Finished building task graph [  0.00s]
+18:18:11.728237 [info ]: Started rendering (3 nodes)
+18:18:11.728248 [info ]: Started model main.int_user_sessions
+18:18:11.728256 [debug]: Started rendering model main.int_user_sessions
+18:18:11.728276 [info ]: Started model main.int_auth_funnel
+18:18:11.728282 [debug]: Started rendering model main.int_auth_funnel
+18:18:11.729960 [debug]: Compiled SQL for node model.spotify_user_platform.int_auth_funnel at target/.lsp/compiled/models/intermediate/int_auth_funnel.sql
+18:18:11.729999 [info ]: Started analyzing (3 nodes)
+18:18:11.730001 [debug]: Finished rendering [  0.00s] model main.int_auth_funnel [success]
+18:18:11.730006 [debug]: Started analyzing model main.int_auth_funnel
+18:18:11.730519 [debug]: Compiled SQL for node model.spotify_user_platform.int_user_sessions at target/.lsp/compiled/models/intermediate/int_user_sessions.sql
+18:18:11.730545 [debug]: Started analyzing model main.int_user_sessions
+18:18:11.730552 [debug]: Finished rendering [  0.00s] model main.int_user_sessions [success]
+18:18:11.738549 [info ]:  Succeeded [  0.01s] model main.int_auth_funnel (ephemeral)
+18:18:11.738566 [debug]: Finished analyzing [  0.01s] model main.int_auth_funnel [success]
+18:18:11.739210 [info ]:  Succeeded [  0.01s] model main.int_user_sessions (ephemeral)
+18:18:11.739221 [debug]: Finished analyzing [  0.01s] model main.int_user_sessions [success]
+18:18:11.739232 [info ]: Started model main.fct_daily_auth_metrics
+18:18:11.739239 [debug]: Started rendering model main.fct_daily_auth_metrics
+18:18:11.740700 [debug]: Compiled SQL for node model.spotify_user_platform.fct_daily_auth_metrics at target/.lsp/compiled/models/marts/fct_daily_auth_metrics.sql
+18:18:11.740725 [debug]: Started analyzing model main.fct_daily_auth_metrics
+18:18:11.740734 [debug]: Finished rendering [  0.00s] model main.fct_daily_auth_metrics [success]
+18:18:11.740739 [info ]: Finished rendering [  0.01s] (3 nodes, 0 skipped, 0 errors)
+18:18:11.773250 [info ]:  Succeeded [  0.03s] model main.fct_daily_auth_metrics (table)
+18:18:11.773269 [debug]: Finished analyzing [  0.03s] model main.fct_daily_auth_metrics [success]
+18:18:11.773273 [info ]: Finished analyzing [  0.04s] (3 nodes, 0 skipped, 0 errors)
+18:18:11.775573 [info ]: Cached model count updated: 6 models (accurate)
+18:20:30.367670 [info ]: Started loading project
+18:20:30.368119 [info ]: Loading profiles.yml
+18:20:30.370991 [info ]: Started parsing
+18:20:30.381610 [info ]: Finished loading project [  0.01s]
+18:20:30.382190 [debug]: Finished parsing models/marts/schema.yml [  0.00s]
+18:20:30.383567 [debug]: Finished parsing models/marts/fct_daily_auth_metrics.sql [  0.00s]
+18:20:30.386507 [debug]: Finished parsing models/marts/user_friction_scores.sql [  0.00s]
+18:20:30.386997 [debug]: Finished parsing target/generic_tests/not_null_fct_daily_auth_metrics_metric_date.sql [  0.00s]
+18:20:30.387390 [debug]: Finished parsing target/generic_tests/not_null_user_friction_scores_friction_score.sql [  0.00s]
+18:20:30.387753 [debug]: Finished parsing target/generic_tests/accepted_values_friction_segment.sql [  0.00s]
+18:20:30.388032 [debug]: Finished parsing target/generic_tests/not_null_user_friction_scores_user_id.sql [  0.00s]
+18:20:30.389201 [debug]: Finished parsing target/generic_tests/unique_user_friction_scores_user_id.sql [  0.00s]
+18:20:30.389500 [info ]: Finished parsing [  0.02s]
+18:20:30.390136 [info ]: Cached model count updated: 6 models (estimate)
+18:20:30.390145 [info ]: Cached model count updated: 6 models (accurate)
+18:20:30.390189 [info ]: Started scheduling
+18:20:30.390229 [info ]: Finished scheduling [  0.00s]
+18:20:30.390234 [debug]: Incremental compilation - 0 nodes selected: {}
+18:20:30.390281 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+18:20:30.390287 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+18:20:30.390510 [info ]: Started deferring state
+18:20:30.390516 [info ]: Finished deferring state [  0.00s]
+18:20:30.488986 [info ]: Started building task graph
+18:20:30.489023 [info ]: Finished building task graph [  0.00s]
+18:20:30.491278 [info ]: Cached model count updated: 6 models (accurate)

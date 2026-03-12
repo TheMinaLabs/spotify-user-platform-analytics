@@ -1,0 +1,7 @@
+spotify_local:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "../spotify_iam.duckdb"
+      threads: 4
