@@ -89,11 +89,37 @@ spotify-user-platform-analytics/
 
 ---
 
+## 🧪 Synthetic Data — Where Does the Data Come From?
+
+This project uses **synthetic data generation** — all data is fabricated by `generate_data.py` using Python's `random` library. No real user data is used at any point.
+
+This is a standard technique in data engineering for building and testing pipelines without needing access to production systems. Here's how it works:
+
+| Library | Role |
+|---------|------|
+| `random` | The core engine — picks countries, devices, event outcomes using weighted probabilities that mirror realistic distributions (e.g. US = 30%, mobile = 58%) |
+| `uuid` | Generates unique IDs like `usr_3f9a21bc04d1` to simulate real user and event identifiers |
+| `datetime` + `timedelta` | Builds realistic timestamps spread across 30 days so the data behaves like a real time series |
+| `duckdb` | Stores the fabricated records into `spotify_iam.duckdb` so dbt can query them like a real warehouse |
+
+**Example:** a "login attempt" event isn't fetched from an API — it's created like this:
+
+```python
+random.choices(["login_success", "login_failure_bad_password", "mfa_triggered"],
+               [0.72, 0.18, 0.10])[0]
+```
+
+This means 72% of attempts succeed, 18% fail with a bad password, and 10% trigger MFA — numbers chosen to produce a realistic-looking dataset.
+
+The result: **500 users and ~30,000 auth events** that behave like real IAM data, allowing the full dbt pipeline, data quality tests, and friction scoring model to be developed and validated end-to-end.
+
+---
+
 ## 🚀 Quick Start
 
 ### 1. Install dependencies
 ```bash
-pip install -r requirements.txt
+pip install duckdb dbt-core dbt-duckdb
 ```
 
 ### 2. Generate synthetic data
@@ -146,24 +172,26 @@ Per-user friction scoring (0–100):
 **Friction score formula:**
 ```
 friction_score = min(100,
-    failure_rate          × 40   -- dominant signal
-  + mfa_blocked_count     ×  5
-  + password_reset_count  × 10
-  + mfa_penalty_if_blocked    5
-  + unverified_email_penalty  5
+    failure_rate          × 40   -- dominant signal: % of sessions that failed
+  + mfa_blocked_count     ×  5   -- each MFA block adds minor friction
+  + password_reset_count  × 10   -- resets indicate full lockout, weighted higher
+  + mfa_penalty_if_blocked    5  -- flat penalty if MFA-enabled user was blocked
+  + unverified_email_penalty  5  -- flat penalty for unverified email address
 )
 ```
+
+The `min(100, ...)` caps the score so all users sit on a clean 0–100 scale regardless of extreme values.
 
 ---
 
 ## 🧪 Data Quality Tests
 
-The project ships **18 dbt tests** across 3 layers:
+The project ships **24 dbt tests** across 3 layers:
 
 | Layer | Tests |
 |-------|-------|
 | Staging | `unique`, `not_null` on PKs; `accepted_values` on event_type and device_category |
-| Marts | `not_null`; range checks on conversion_rate (0–1) and friction_score (0–100) |
+| Marts | `not_null` on key columns; `accepted_values` on friction_segment |
 | Singular | No future-dated events; conversion rate never below 10% over 7-day window |
 
 ---
@@ -200,10 +228,13 @@ A single metric loses nuance. A user with 3 MFA blocks and 0 password resets has
 **Why DuckDB locally instead of BigQuery emulator?**  
 DuckDB supports the same SQL dialect, runs fully in-process with no infrastructure, and is the fastest way to iterate on dbt models during development — mirroring how Spotify engineers develop locally before promoting to BigQuery.
 
+**Why synthetic data?**  
+Building pipelines against real production data requires access, compliance approvals, and risks exposing PII. Synthetic data generation allows the full pipeline to be developed, tested, and shared publicly without any of those constraints — while still producing statistically realistic results.
+
 ---
 
 ## 👩‍💻 Author
 
 Built by Mina as a portfolio project to demonstrate analytics engineering skills relevant to Spotify's User Platform team.
 
-Skills demonstrated: **dbt modelling (staging → intermediate → marts)** · **IAM/identity domain data** · **Data quality testing** · **Funnel analysis & conversion metrics** · **Python data pipeline engineering** · **SQL (BigQuery-compatible)**
+Skills demonstrated: **dbt modelling (staging → intermediate → marts)** · **IAM/identity domain data** · **Synthetic data generation** · **Data quality testing** · **Funnel analysis & conversion metrics** · **Python data pipeline engineering** · **SQL (BigQuery-compatible)**
